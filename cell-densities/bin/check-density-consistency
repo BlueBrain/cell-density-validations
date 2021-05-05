@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+import json
+from nrrdhlp import Masker, Tester
+
+
+def main(fn_specs):
+    import json
+    with open(fn_specs, "r") as fid:
+        specs = json.load(fid)
+
+    tester = Tester(specs["hierarchy"], specs["annotations"],
+                    specs["nrrd"], circuits_dict=specs.get("circuits", {}))
+
+    for test in specs["tests"]:
+        print("""Testing: {0} equals {1}
+        for regions matching {2}
+        with a relative tolerance of {3}...""".format(str(test["left"]), str(test["right"]), str(test.get("mask", {})),
+                                                      test["tolerance"]))
+        left, right, errspec, passed = tester.evaluate(test)
+        str_passed = "FAILED!"
+        if passed:
+            str_passed = "PASSED!"
+        print("""\t\tleft sum is {0}
+        \tright sum is {1}
+        \t\tResulting errors:""".format(left, right))
+        for k, v in errspec.items():
+            print("\t\t\t{0}: {1}".format(k, v))
+        print("""\tConclusion: {0}\n\n""".format(str_passed))
+    print("\n" + tester.test_count_str())
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: {0} test_specs.json. For the format if test_specs.json see README".format(__file__))
+    main(sys.argv[1])

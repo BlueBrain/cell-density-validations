@@ -1,0 +1,160 @@
+{
+  "annotations": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/annotations.nrrd",
+  "hierarchy": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/brain_regions.json",
+  "nrrd": {
+    "cells": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/cell_density.nrrd",
+    "neurons": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/neu_density.nrrd",
+    "gad": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/densities_GAD.nrrd",
+    "exc": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/densities_EXC.nrrd",
+    "pv": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/densities_PV.nrrd",
+    "sst": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/densities_SST.nrrd",
+    "rest": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/densities_REST.nrrd",
+    "vip": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/densities_VIP.nrrd",
+    "glia": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/glia_density.nrrd",
+    "astro": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/astro_density.nrrd",
+    "micro": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/micglia_density.nrrd",
+    "oligo": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/oligo_density.nrrd",
+    "inh-mtypes": [
+      "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_LBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L4_BTC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_NBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_BTC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_SBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_MC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_ChC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L4_BP_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_BTC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L4_DBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_NBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L4_NBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L1_DLAC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_ChC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_NGC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_DBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L4_LBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_MC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_DBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L1_SLAC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_NBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L6_SBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_MC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_SBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_DBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_LBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L4_MC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_BP_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L4_SBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L1_HAC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L1_DAC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L1_NGC-SA_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_ChC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L5_LBC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_BTC_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L1_NGC-DA_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_BP_densities.nrrd",
+     "/gpfs/bbp.cscs.ch/home/yroussel/m_type_densities/m-type_densities_March18_hard_layer_added_L4PV/L23_NGC_densities.nrrd"
+    ],
+    "exc-mtypes": [
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L2_IPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L2_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L2_TPC:B.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L3_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L3_TPC:C.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L4_TPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L4_UPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L4_SSC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L5_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L5_TPC:B.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L5_TPC:C.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L5_UPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L6_IPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L6_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L6_TPC:C.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L6_BPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L6_HPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L6_UPC.nrrd"
+    ]
+  },
+  "tests": [
+    {
+      "left": ["gad"],
+      "right": ["pv", "sst", "rest", "vip"],
+      "mask": "Isocortex",
+      "tolerance": {"relative": 1E-6},
+      "comment": "GAD is all gaba-ergic neurons which are by definition pv, sst, vip and rest"
+    },
+    {
+      "modality": "count",
+      "left": [111080000],
+      "right": ["cells"],
+      "tolerance": {"relative": 1E-6},
+      "comment": "Total number of cells according to Dimitri 's original work"
+    },
+    {
+      "modality": "count",
+      "left": [71760000],
+      "right": ["neurons"],
+      "tolerance": {"relative": 1E-6},
+      "comment": "Total number of neurons according to Dimitri's original work"
+    },
+    {
+      "modality": "count",
+      "left": [0],
+      "right": ["exc"],
+      "mask": ["and",["Isocortex", "Layer1"]],
+      "tolerance": {"absolute": 1E-2},
+      "comment": "Nothing excitatory in L1!"
+    },
+    {
+      "left": ["neurons", "glia"],
+      "right": ["cells"],
+      "mask": "Isocortex",
+      "tolerance": {"relative": 1E-6},
+      "comment": "Cells are either neurons or glia in this context"
+    },
+    {
+      "left": ["glia"],
+      "right": ["astro", "micro", "oligo"],
+      "mask": "Isocortex",
+      "tolerance": {"relative": 1E-6},
+      "comment": "Glia are one of the three subtypes"
+    },
+    {
+      "left": ["neurons"],
+      "right": ["exc", "gad"],
+      "mask": "Isocortex",
+      "tolerance": {"relative": 1E-6},
+      "comment": "Neurons are either excitatory or GABA-ergic"
+    },
+    {
+      "left": ["gad"],
+      "right": ["inh-mtypes"],
+      "mask": ["and",["Isocortex", "Layer1"]],
+      "tolerance": {"relative": 1E-6},
+      "comment": "m-types mapping use GAD in L1"
+    },
+    {
+      "left": ["inh-mtypes"],
+      "right": ["pv", "sst", "vip"],
+      "mask": ["and",["Isocortex", "Layer[2-6]"]],
+      "tolerance": {"relative": 1E-6},
+      "comment": "In L2 to L6 we map m-types for now using only pv, sst and vip densities, ignoring rest"
+    },
+    {
+      "left": ["gad"],
+      "right": ["inh-mtypes", "rest"],
+      "mask": ["and",["Isocortex", "Layer[2-6]"]],
+      "tolerance": {"relative": 1E-6},
+      "comment": "Adding 'rest' back to the generated m-types should then yield the total gaba-ergic density."
+    },
+    {
+      "left": ["exc"],
+      "right": ["exc-mtypes"],
+      "mask": "Isocortex",
+      "tolerance": {"relative": 1E-6},
+      "comment": "Individual excitatory m-types should add up to the estimated excitatory density"
+    }
+  ]
+}
+
+
