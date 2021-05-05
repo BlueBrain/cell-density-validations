@@ -1,6 +1,8 @@
 import os
 import re
 
+from voxcell import VoxelData
+
 from .mtypes import parse_mtype
 
 fn_hierarchy = "hierarchy.json"
@@ -11,7 +13,7 @@ def load_all_densities(root, density_kw="densities"):
     fns = [os.path.join(root, x) for x in os.listdir(root) if density_kw in x]
 
     mtypes = [parse_mtype(os.path.split(x)[1]) for x in fns]
-    data = [(mtype, voxcell.VoxelData.load_nrrd(fn)) for mtype, fn in zip(mtypes, fns)
+    data = [(mtype, VoxelData.load_nrrd(fn)) for mtype, fn in zip(mtypes, fns)
             if mtype is not None]
     return dict(data)
 

@@ -1,6 +1,7 @@
 import numpy
 
 from voxcell import VoxelData
+from .masker import Masker
 
 
 def absmax(arr_in):
