@@ -28,16 +28,17 @@ def find_almost_leaves(j, target_lvl, conjunction_func=numpy.max):
 
 
 def list_cortex_regions(hierarchy, root_acronym="Isocortex"):
-    if os.path.isdir(hierarchy):
-        from .find_atlas_files import find_hierarchy
-        json_data = find_hierarchy(hierarchy, format="json")
-        assert json_data is not None, "No hierarchy found under {0}".format(hierarchy)
-    elif os.path.isfile(hierarchy):
-        with open(hierarchy, 'r') as fid:
-            import json
-            json_data = json.load(fid)
-        if 'msg' in json_data:
-            json_data = json_data['msg'][0]
+    if isinstance(hierarchy, str) or isinstance(hierarchy, os.PathLike):
+        if os.path.isdir(hierarchy):
+            from .find_atlas_files import find_hierarchy
+            json_data = find_hierarchy(hierarchy, format="json")
+            assert json_data is not None, "No hierarchy found under {0}".format(hierarchy)
+        else:
+            with open(hierarchy, 'r') as fid:
+                import json
+                json_data = json.load(fid)
+            if 'msg' in json_data:
+                json_data = json_data['msg'][0]
     else:
         json_data = hierarchy
     root = find_root(json_data, root_acronym)
