@@ -3,7 +3,7 @@ import numpy
 from voxcell import VoxelData
 from voxcell.nexus.voxelbrain import RegionMap
 
-layer_match_pat = "@.*layer {0}[ab]?$"
+layer_match_pat = "@.*[lL]ayer {0}[ab]?$"
 
 
 class Masker(object):
