@@ -10,18 +10,20 @@ layers = ["1", "2", "3", "4", "5", "6"]
 
 
 def compare_across_regions(densities, masker, lst_regions):
+    vxl_vol = masker.annotation.voxel_volume
     res_raw = []
     for i, l in enumerate(layers):
         print(str(i))
         for reg in lst_regions:
             mask = masker.mask(["and", ["Layer" + l, reg]])
+            mask_vol = mask.sum() * vxl_vol
             for mtype, dens in densities.items():
                 value = dens.raw[mask].mean()
-                res_raw.append((mtype, l, reg, value))
+                res_raw.append((mtype, l, reg, value, mask_vol))
 
-    res_raw = pandas.DataFrame(res_raw, columns=["Mtype", "Layer", "Region", "Density"])
-    res = pandas.Series(res_raw["Density"].values,
-                        index=pandas.MultiIndex.from_frame(res_raw[["Mtype", "Layer", "Region"]]))
+    res_raw = pandas.DataFrame(res_raw, columns=["Mtype", "Layer", "Region", "Density", "Volume"])
+    res = pandas.DataFrame(res_raw[["Density", "Volume"]].values, columns=["Density", "Volume"],
+                           index=pandas.MultiIndex.from_frame(res_raw[["Mtype", "Layer", "Region"]]))
     return res
 
 
