@@ -1,5 +1,8 @@
 Configuration files to use for validating cell densities of the M7 circuit
 
+Note: In all files the paths to the input files, i.e. the density .nrrd files, must still be updated to their actual locations!
+Similarly, for the validation of densities in the circuit, the path to the circuit needs to be updated!
+
 Validation of consistency of "input" densities
 CONFIG: consistency_checks_density_inputs.json
 
