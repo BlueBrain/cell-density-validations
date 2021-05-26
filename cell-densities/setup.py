@@ -26,7 +26,8 @@ setup(
     packages=find_packages(),
     scripts=[
         "bin/check-density-consistency",
-        "bin/densities-across-regions"
+        "bin/densities-across-regions",
+        "bin/adjust-densities-across-regions"
     ],
     python_requires=">=3.6",
     classifiers=[
