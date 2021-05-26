@@ -6,7 +6,7 @@ from nrrdhlp.find_atlas_files import load_all_densities, find_hierarchy, find_re
 from nrrdhlp.hierarchyhlp import list_cortex_regions
 from nrrdhlp import Masker
 
-layers = ["1", "2", "3", "4", "5", "6"]
+layers = ["1", "2/3", "2", "3", "4", "5", "6"]
 
 
 def compare_across_regions(densities, masker, lst_regions):
