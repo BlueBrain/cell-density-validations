@@ -1,5 +1,7 @@
 import numpy
 
+from os import path
+
 from voxcell import VoxelData
 from .masker import Masker
 
@@ -154,6 +156,17 @@ class Tester(object):
 
         return A.sum(), B.sum(), err_spec, passed
 
+    @staticmethod
+    def load_from_tar(tar, tmp_root="/tmp"):
+        members = [_x for _x in tar.getmembers() if _x.isfile()]
+        tar.extract(members[0], path=tmp_root)
+        loaded = VoxelData.load_nrrd(path.join(tmp_root, members[0].name))
+        raw = loaded.raw.copy()
+        for member in members[1:]:
+            tar.extract(member, path=tmp_root)
+            raw += VoxelData.load_nrrd(path.join(tmp_root, member.name)).raw
+        return VoxelData(raw, loaded.voxel_dimensions, offset=loaded.offset)
+
     def load_nrrd(self, to_load):
         """
         Load an nrrd file or the sum of several
@@ -173,7 +186,12 @@ class Tester(object):
 
                 filespec = self.nrrd[to_load]
                 if isinstance(filespec, str):
-                    self.__cached_vols__[to_load_str] = VoxelData.load_nrrd(filespec)
+                    if path.splitext(filespec)[1] == ".tar":
+                        import tarfile
+                        with tarfile.open(filespec, "r") as tar:
+                            self.__cached_vols__[to_load_str] = self.load_from_tar(tar)
+                    else:
+                        self.__cached_vols__[to_load_str] = VoxelData.load_nrrd(filespec)
                 elif isinstance(filespec, list):
                     loaded = VoxelData.load_nrrd(filespec[0])  # Checked for len == 0 before!
                     raw = loaded.raw.copy()
