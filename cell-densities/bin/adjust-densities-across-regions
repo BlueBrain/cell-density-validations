@@ -2,6 +2,7 @@
 import sys
 import os
 import pandas
+import numpy
 
 from voxcell import VoxelData
 
@@ -30,8 +31,9 @@ def adjust_across_regions(root, adjustments, masker):
                 n = mask.sum()
                 try:
                     fac = adjustments[mtype][reg][l]
-                    print("In layer {0} of {1}: Adjusting {2} voxel with a factor of {3}".format(l, reg, n, fac))
-                    vol.raw[mask] = fac * vol.raw[mask]
+                    if not numpy.isnan(fac) and not numpy.isinf(fac):
+                        print("In layer {0} of {1}: Adjusting {2} voxel with a factor of {3}".format(l, reg, n, fac))
+                        vol.raw[mask] = fac * vol.raw[mask]
                 except KeyError:
                     pass
         vol.to_nrrd(make_fn(root, mtype, fixed=True))
