@@ -30,8 +30,14 @@ def compare_across_regions(densities, masker, lst_regions):
 def main(root):
     densities = load_all_densities(root)
     full_fn_hierarchy = find_hierarchy(root, format="path")
+    if full_fn_hierarchy is None:
+        print("No region hierarchy file found under {0}.".format(root))
+        sys.exit(2)
     hier_json = find_hierarchy(root, format="json")
     full_fn_regions = find_regions(root, format="path")
+    if full_fn_regions is None:
+        print("No region annotation file found under {0}.".format(root))
+        sys.exit(2)
     masker = Masker(full_fn_hierarchy, full_fn_regions)
     lst_regions = list_cortex_regions(hier_json, root_acronym="Isocortex")
     return compare_across_regions(densities, masker, lst_regions)
