@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+"""
+This file tests that using the masking logic of this project, the union of layers 1-6 of isocortex add up to
+the entirety of isocortex.
+This can be considered a validation of masker.py, or of the brain region atlas
+"""
+import numpy
+import voxcell
+
+
+from nrrdhlp.hierarchyhlp import list_cortex_regions
+from nrrdhlp.masker import Masker
+
+isocortex = "Isocortex"
+layers = ["Layer1", "Layer2", "Layer3", "Layer4", "Layer5", "Layer6"]
+
+
+def test_partition_equal_isocortex(fn_hierarchy, fn_annotation, specs_partition, report_str):
+    m = Masker(fn_hierarchy, fn_annotation)
+
+    mask_right = m.mask(isocortex)
+    sum_right = numpy.sum(mask_right)
+    mask_left = numpy.zeros_like(mask_right, dtype=bool)
+    sum_left_individual = 0
+    for spec in specs_partition:
+        mask = m.mask(spec)
+        sum_left_individual += numpy.sum(mask)
+        mask_left = mask_left | mask
+    sum_left_merged = numpy.sum(mask_left)
+    inconsistent_voxels = mask_right != mask_left
+
+    print("Isocortex voxels - {0} voxels individually: {1}".format(report_str, sum_right - sum_left_individual))
+    print("Isocortex voxels - {0} voxels merged: {1}".format(report_str, sum_right - sum_left_merged))
+    if numpy.any(inconsistent_voxels):
+        regions = voxcell.VoxelData.load_nrrd(fn_annotation)
+        problematic_region_ids = numpy.unique(regions.raw[inconsistent_voxels])
+        print("Inconsistent region ids:")
+        for rid in problematic_region_ids:
+            print(m.rmap.get(rid, "name"))
+    else:
+        print("No inconsistent region ids")
+
+
+def test_layers_equal_isocortex(fn_hierarchy, fn_annotation):
+    specs_layer = [
+        ["and", [isocortex, layer]]
+        for layer in layers
+    ]
+    return test_partition_equal_isocortex(fn_hierarchy, fn_annotation, specs_layer, "Layer")
+
+
+def test_regions_equal_isocortex(fn_hierarchy, fn_annotation):
+    regions = list_cortex_regions(fn_hierarchy)
+    specs_regions = [
+        ["and", [isocortex, region]]
+        for region in regions
+    ]
+    return test_partition_equal_isocortex(fn_hierarchy, fn_annotation, specs_regions, "Region")
+
+
+def main():
+    import sys
+    test_layers_equal_isocortex(*sys.argv[1:])
+    test_regions_equal_isocortex(*sys.argv[1:])
+
+
+if __name__ == "__main__":
+    main()
