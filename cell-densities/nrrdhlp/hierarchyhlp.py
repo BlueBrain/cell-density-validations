@@ -2,6 +2,9 @@ import os
 import numpy
 
 
+lst_broken_regions = ['VISrll', 'VISlla', 'VISmma', 'VISmmp', 'VISm']  # REMOVE THIS ONCE HIERARCHY IS FIXED!
+
+
 def find_root(j, root_acronym):
     if j['acronym'] == root_acronym:
         return j
@@ -13,18 +16,21 @@ def find_root(j, root_acronym):
     return None
 
 
-def find_almost_leaves(j, target_lvl, conjunction_func=numpy.max):
+def find_almost_leaves(j, target_lvl, conjunction_func=numpy.max, partition=False):
     if 'children' not in j or len(j['children']) == 0:
         lvl = 0
-        lst_ids = [[]]
+        lst_ids = []
     else:
-        res_lvl, lst_ids = zip(*[find_almost_leaves(child, target_lvl, conjunction_func=conjunction_func)
-                                 for child in j['children']])
+        res_lvl, lst_ids = zip(*[find_almost_leaves(child, target_lvl, conjunction_func=conjunction_func,
+                                                    partition=partition)
+                                 for child in j['children'] if child['acronym'] not in lst_broken_regions])  # AND THIS
+        lst_ids = numpy.hstack(list(lst_ids)).tolist()
         lvl = conjunction_func(list(res_lvl)) + 1
-    add_ids = []
     if lvl == target_lvl:
-        add_ids.append([j['acronym']])
-    return lvl, numpy.unique(numpy.hstack(list(lst_ids) + add_ids))
+        if partition:
+            lst_ids = []
+        lst_ids.append(j['acronym'])
+    return lvl, numpy.unique(lst_ids)
 
 
 def list_cortex_regions(hierarchy, root_acronym="Isocortex"):
