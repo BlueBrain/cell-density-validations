@@ -3,7 +3,9 @@ import numpy
 from voxcell import VoxelData
 from voxcell.nexus.voxelbrain import RegionMap
 
-layer_match_pat = "@.*[lL]ayer {0}[ab]?$"
+# layer_match_pat = "@.*[lL]ayer {0}[ab]?$"
+layer_match_pat = "@.*{0}[ab]?$"
+layer_match_prop = "acronym"
 
 
 class Masker(object):
@@ -31,7 +33,7 @@ class Masker(object):
         if isinstance(specs, str):
             if specs.startswith("Layer"):  # TODO: This can be done better. Maybe a dict?
                 specs = specs[5:]
-                return list(self.rmap.find(layer_match_pat.format(specs), "name",
+                return list(self.rmap.find(layer_match_pat.format(specs), layer_match_prop,
                                            with_descendants=True))
             return list(self.rmap.find(specs, "acronym", with_descendants=True))
         elif isinstance(specs, list):
