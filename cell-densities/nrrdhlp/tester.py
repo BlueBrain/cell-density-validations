@@ -33,8 +33,30 @@ class Tester(object):
             assert isinstance(nrrdspec, str) or (isinstance(nrrdspec, list) and len(nrrdspec) > 0)
             # Should also test that the annotation volume is compatible with the nrrd files (voxel size etc)
 
+    @classmethod
+    def distribution_chi2(cls, A, B):
+        from scipy.stats.contingency import chi2_contingency
+        to_test = numpy.vstack([A, B])
+        to_test = to_test[:, to_test.sum(axis=0) > 0]
+        if to_test.shape[1] == 0:
+            return 0.0
+        _, p_val, _, _ = chi2_contingency(to_test)
+        return numpy.abs(numpy.log10(p_val))
+
+    @classmethod
+    def distribution_per_voxel_binomial(cls, A, B):
+        from scipy.stats import binom, combine_pvalues
+        # Yes, this test treats individual voxels as statistically independent. Which they are not. Sorry.
+        Ap = A / A.sum()
+        distrib = binom(B.sum(), Ap)
+        left_tail = distrib.cdf(B)
+        right_tail = 1.0 - distrib.cdf(B - 1)
+        p_vals = 2 * numpy.minimum(left_tail, right_tail)
+        _, combined_p_value = combine_pvalues(p_vals)
+        return numpy.abs(numpy.log10(combined_p_value))
+
     @staticmethod
-    def test_against_tolerance(A, B, tolerance_spec):
+    def test_against_tolerance(A, B, tolerance_spec, use_per_voxel_binomial=False):
         """
         Tests whether the error between A and B is within the specified tolerance
         :param A: 1-dimensional numpy.array
@@ -44,17 +66,29 @@ class Tester(object):
                  err2 (float): Maximal element-wise relative error,
                  passed (bool): True if error does not exceed any tolerance
         """
+        assert len(A) == len(B)
         err1 = absmax(A - B)
         err2 = absmax((A - B) / (A + B + 1E-100))
+        if len(A) > 1:  # For a single value there is no distribution, hence the measure makes no sense
+            err3 = Tester.distribution_chi2(A, B)
+            if use_per_voxel_binomial:
+                err_p2 = Tester.distribution_per_voxel_binomial(A, B)
+                err3 = numpy.maximum(err_p2, err3)
+            if "log-p-value" in tolerance_spec:
+                if (err3 > tolerance_spec["log-p-value"]) or numpy.isnan(err3):
+                    return err1, err2, err3, False
+        else:
+            err3 = numpy.NaN
+
         if len(tolerance_spec) == 0:
-            return err1, err2, err1 == 0
+            return err1, err2, err3, err1 == 0
         if "absolute" in tolerance_spec:
-            if numpy.abs(err1) > tolerance_spec["absolute"]:
-                return err1, err2, False
+            if (numpy.abs(err1) > tolerance_spec["absolute"]) or numpy.isnan(err1):
+                return err1, err2, err3, False
         if "relative" in tolerance_spec:
-            if numpy.abs(err2) > tolerance_spec["relative"]:
-                return err1, err2, False
-        return err1, err2, True
+            if (numpy.abs(err2) > tolerance_spec["relative"]) or numpy.isnan(err2):
+                return err1, err2, err3, False
+        return err1, err2, err3, True
 
     @staticmethod
     def neuron_dens_voxel_data(xyz, reference):
@@ -131,19 +165,24 @@ class Tester(object):
 
         modality = specs.get("modality", "density")
         is_cell_count = (modality == "count")
+        tolerance = specs.get("tolerance", {})
 
         A = [self.load_nrrd(_x) for _x in specs["left"]]
         B = [self.load_nrrd(_x) for _x in specs["right"]]
 
         A, B = self.mask_and_sum(A, B, mask, is_cell_count)
-        abs_err_sum, rel_err_sum, passed = self.test_against_tolerance(A.sum(keepdims=True),
-                                                                       B.sum(keepdims=True),
-                                                                       specs.get("tolerance", {}))
+        abs_err_sum, rel_err_sum, _, passed = self.test_against_tolerance(A.sum(keepdims=True),
+                                                                          B.sum(keepdims=True),
+                                                                          tolerance.get("sum_of_voxels", tolerance),
+                                                                          use_per_voxel_binomial=False)
         err_spec = {"Absolute sum": abs_err_sum, "Relative sum": rel_err_sum}
         if len(A) > 1:
-            abs_err, rel_err, passed_vxl = self.test_against_tolerance(A, B, specs.get("tolerance", {}))
+            abs_err, rel_err, p_val_err, passed_vxl =\
+                self.test_against_tolerance(A, B, tolerance.get("idv_voxels", tolerance),
+                                            use_per_voxel_binomial=is_cell_count)
             err_spec["Absolute max over voxels"] = abs_err
             err_spec["Relative max over voxels"] = rel_err
+            err_spec["Distribution log p-value"] = p_val_err
             passed = passed & passed_vxl
 
         for fl in specs["left"] + specs["right"]:

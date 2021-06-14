@@ -14,7 +14,7 @@ def main(fn_specs):
     for test in specs["tests"]:
         print("""Testing: {0} equals {1}
         for regions matching {2}
-        with a relative tolerance of {3}...""".format(str(test["left"]), str(test["right"]), str(test.get("mask", {})),
+        with a tolerance of {3}...""".format(str(test["left"]), str(test["right"]), str(test.get("mask", {})),
                                                       test["tolerance"]))
         left, right, errspec, passed = tester.evaluate(test)
         str_passed = "FAILED!"
