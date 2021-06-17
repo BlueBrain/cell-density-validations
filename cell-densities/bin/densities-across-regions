@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import pandas
+import numpy
 
 from nrrdhlp.find_atlas_files import load_all_densities, find_hierarchy, find_regions
 from nrrdhlp.hierarchyhlp import list_cortex_regions
@@ -24,10 +25,13 @@ def compare_across_regions(densities, masker, lst_regions):
             mask_vol = mask.sum() * vxl_vol
             for mtype, dens in densities.items():
                 raw = dens.raw[mask]
-                mn_value = raw.mean()
-                mx_to_median = raw.max() / (numpy.percentile(raw[raw > 0], 50) + 1E-6)
-                mx_to_99 = raw.max() / (numpy.percentile(raw[raw > 0], 99) + 1E-6)
-                res_raw.append((mtype, l, reg, mn_value, mask_vol, mx_to_median, mx_to_99))
+                if numpy.any(raw > 0):
+                    mn_value = raw.mean()
+                    mx_to_median = raw.max() / (numpy.percentile(raw[raw > 0], 50) + 1E-6)
+                    mx_to_99 = raw.max() / (numpy.percentile(raw[raw > 0], 99) + 1E-6)
+                    res_raw.append((mtype, l, reg, mn_value, mask_vol, mx_to_median, mx_to_99))
+                else:
+                    res_raw.append((mtype, l, reg, numpy.NaN, mask_vol, numpy.NaN, numpy.NaN))
 
     res_raw = pandas.DataFrame(res_raw, columns=["Mtype", "Layer", "Region", "Density",
                                                  "Volume", "Max to median", "Max to 99"])
