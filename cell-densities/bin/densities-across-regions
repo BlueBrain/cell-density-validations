@@ -6,10 +6,15 @@ from nrrdhlp.find_atlas_files import load_all_densities, find_hierarchy, find_re
 from nrrdhlp.hierarchyhlp import list_cortex_regions
 from nrrdhlp import Masker
 
-layers = ["1", "2/3", "2", "3", "4", "5", "6"]
+layers_pooled = ["1", "2/3", "4", "5", "6"]
+layers_split = ["1", "2", "3", "4", "5", "6"]
 
 
 def compare_across_regions(densities, masker, lst_regions):
+    if len(masker.target_ids(["and", ["Isocortex", "Layer2/3"]])) > 0:
+        layers = layers_pooled
+    else:
+        layers = layers_split
     vxl_vol = masker.annotation.voxel_volume
     res_raw = []
     for i, l in enumerate(layers):
@@ -18,11 +23,16 @@ def compare_across_regions(densities, masker, lst_regions):
             mask = masker.mask(["and", ["Layer" + l, reg]])
             mask_vol = mask.sum() * vxl_vol
             for mtype, dens in densities.items():
-                value = dens.raw[mask].mean()
-                res_raw.append((mtype, l, reg, value, mask_vol))
+                raw = dens.raw[mask]
+                mn_value = raw.mean()
+                mx_to_median = raw.max() / (numpy.percentile(raw[raw > 0], 50) + 1E-6)
+                mx_to_99 = raw.max() / (numpy.percentile(raw[raw > 0], 99) + 1E-6)
+                res_raw.append((mtype, l, reg, mn_value, mask_vol, mx_to_median, mx_to_99))
 
-    res_raw = pandas.DataFrame(res_raw, columns=["Mtype", "Layer", "Region", "Density", "Volume"])
-    res = pandas.DataFrame(res_raw[["Density", "Volume"]].values, columns=["Density", "Volume"],
+    res_raw = pandas.DataFrame(res_raw, columns=["Mtype", "Layer", "Region", "Density",
+                                                 "Volume", "Max to median", "Max to 99"])
+    res = pandas.DataFrame(res_raw[["Density", "Volume", "Max to median", "Max to 99"]].values,
+                           columns=["Density", "Volume", "Max to median", "Max to 99"],
                            index=pandas.MultiIndex.from_frame(res_raw[["Mtype", "Layer", "Region"]]))
     return res
 
