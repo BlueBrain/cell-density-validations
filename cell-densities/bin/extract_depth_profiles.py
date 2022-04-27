@@ -24,7 +24,7 @@ def make_region_profiles(depths, regions, region_masks, density_fn, d_bins):
         res.append(list(map(numpy.mean, dens_smpls)))
         idx.append((name, region))
     midx = pandas.MultiIndex.from_tuples(idx, names=["type", "region"])
-    return pandas.DataFrame(numpy.vstack(res).transpose(), columns=midx, index=d_bins[:-1])
+    return pandas.DataFrame(numpy.vstack(res).transpose(), columns=midx, index=0.5 * (d_bins[:-1] + d_bins[1:]))
 
 
 def configure():
@@ -41,9 +41,14 @@ def configure():
                             glob.glob(os.path.join(root, "[cell_density*"))
                             )
     hier_fn = cfg.get("hierarchy", find_hierarchy(root))
-    with open(hier_fn, "r") as fid:
-        hier = json.load(fid)["msg"][0]
-    regions = cfg.get("regions", list_cortex_regions(hier))
+    regions = cfg.get("regions", None)
+    if regions is None:
+        with open(hier_fn, "r") as fid:
+            hier = json.load(fid)
+            if "msg" in hier:
+                hier = hier["msg"][0]
+        regions = list_cortex_regions(hier)
+
     annotation_fn = cfg.get("annotations", find_regions(root))
     depth_fn = cfg.get("depths", os.path.join(root, "[PH]y.nrrd"))
     depths = voxcell.VoxelData.load_nrrd(depth_fn)
@@ -57,7 +62,7 @@ def configure():
         out_fn = cfg.get("out_fn", "layer_profiles.pkl")
 
     masker = Masker(hier_fn, annotation_fn)
-    return density_files, hier, masker, depths, regions, out_fn, mx_depths, nbins
+    return density_files, hier_fn, masker, depths, regions, out_fn, mx_depths, nbins
 
 
 def main():
