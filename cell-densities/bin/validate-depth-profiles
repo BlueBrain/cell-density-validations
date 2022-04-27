@@ -62,24 +62,26 @@ def voxel_counts_per_depth(per_depth_count, depth_bin_arr, hier, ann):
     per_depth_voxel_count = pandas.concat(values, axis=1, keys=indices, names=["region"])
     return per_depth_voxel_count
 
-def plot_single(data, ref, type_regexp, depth_lbl):
+def plot_single(data, ref, type_regexp, region_regexp, depth_lbl):
     import re
 
-    data = data.copy(); ref = ref.copy()
-    data.columns = data.columns.reorder_levels(["mtype", "region"])
-    ref.columns = ref.columns.reorder_levels(["type", "region"])
-    
-    lst_mtypes = [_x for _x in data.columns.levels[0] if re.match(type_regexp, _x) is not None]
-    lst_types = [_x for _x in ref.columns.levels[0] if re.match(type_regexp, _x) is not None]
-    
-    data = data[lst_mtypes].sum(axis=1, level="region")
-    ref = ref[lst_types].sum(axis=1, level="region")
+    mtch_data = data.columns.to_frame().apply(lambda x: re.match(
+        type_regexp, x["mtype"]) is not None and
+        re.match(region_regexp, x["region"]) is not None,
+        axis=1)
+    mtch_ref = ref.columns.to_frame().apply(lambda x: re.match(
+        type_regexp, x["type"]) is not None and
+        re.match(region_regexp, x["region"]) is not None,
+        axis=1)
+
+    data = data.loc[:, mtch_data].transpose().groupby("region").sum().transpose() # Pandas sucks
+    ref = ref.loc[:, mtch_ref].transpose().groupby("region").sum().transpose() # Pandas sucks
     
     data_mn = data.mean(axis=1); data_sd = data.std(axis=1)
     ref_mn = ref.mean(axis=1); ref_sd = ref.std(axis=1)
     
-    fig = plt.figure(figsize=(4.5, 1.5))
-    ax = fig.gca()
+    fig = plt.figure(figsize=(4.5, 2))
+    ax = fig.add_axes([0.15, 0.25, 0.825, 0.725])
     
     ax.errorbar(ref_mn.index, ref_mn.values, yerr=ref_sd.values, color="red", lw=1.5)
     ax.errorbar(data_mn.index, data_mn.values, yerr=data_sd.values, color="blue", lw=0.5)
@@ -92,7 +94,10 @@ def plot_single(data, ref, type_regexp, depth_lbl):
 
 def plot_all(df_data, df_ref, plots_root, plots_dict, depth_lbl):
     for plt_name, plt_re in plots_dict.items():
-        fig = plot_single(df_data, df_ref, plt_re, depth_lbl)
+        if isinstance(plt_re, dict):
+            fig = plot_single(df_data, df_ref, plt_re["types"], plt_re["regions"], depth_lbl)
+        else:
+            fig = plot_single(df_data, df_ref, plt_re, ".*", depth_lbl)
         fig.savefig(os.path.join(plots_root, plt_name))
         plt.close(fig)
 

@@ -1,85 +1,2388 @@
 {
-    "atlas": "/gpfs/bbp.cscs.ch/project/proj83/data/atlas/S1/MEAN/P14-MEAN",
-    "regions": ["S1FL", "S1HL", "S1Sh", "S1ULp", "S1M", "S1J", "S1DZ", "S1DZO"],
-    "depths": "/gpfs/bbp.cscs.ch/project/proj83/data/atlas/S1/MEAN/P14-MEAN/distance.nrrd",
-    "depth_label": "Dist. fr. white matter (um)",
-    "nbins": 100,
-    "profiles_fn": "abs_depth_profiles.pkl",
-    "circuit": "/gpfs/bbp.cscs.ch/project/proj83/circuits/Bio_M/20200805/CircuitConfig",
-    "plots": {
-        "profile_MC.png": ".*_.*MC*",
-        "profile_BC.png": ".*_.*BC*",
-        "profile_SBC.png": ".*_.*SBC*",
-        "profile_NBC.png": ".*_.*NBC*",
-        "profile_BTC.png": ".*_.*BTC*",
-        "profile_LBC.png": ".*_.*LBC*",
-        "profile_PC.png": ".*_.*PC*",
-        "profile_TPC.png": ".*_.*TPC*",
-        "profile_TPC:A.png": ".*_.*TPC:A*",
-        "profile_TPC:B.png": ".*_.*TPC:B*",
-        "profile_TPC:C.png": ".*_.*TPC:C*",
-        "profile_UPC.png": ".*_.*UPC*",
-        "profile_IPC.png": ".*_.*IPC*",
-        "profile_HPC.png": ".*_.*HPC*",
-        "L1_DAC": "L1_DAC",
-        "L1_HAC": "L1_HAC",
-        "L1_LAC": "L1_LAC",
-        "L1_NGC": "L1_NGC",
-        "L1_SAC": "L1_SAC",
-        "L23_BP": "L23_BP",
-        "L23_BTC": "L23_BTC",
-        "L23_CHC": "L23_CHC",
-        "L23_DBC": "L23_DBC",
-        "L23_LBC": "L23_LBC",
-        "L23_MC": "L23_MC",
-        "L23_NBC": "L23_NBC",
-        "L23_NGC": "L23_NGC",
-        "L23_SBC": "L23_SBC",
-        "L2_IPC": "L2_IPC",
-        "L2_TPC:A": "L2_TPC:A",
-        "L2_TPC:B": "L2_TPC:B",
-        "L3_TPC:A": "L3_TPC:A",
-        "L3_TPC:B": "L3_TPC:B",
-        "L3_TPC:C": "L3_TPC:C",
-        "L4_BP": "L4_BP",
-        "L4_BTC": "L4_BTC",
-        "L4_CHC": "L4_CHC",
-        "L4_DBC": "L4_DBC",
-        "L4_LBC": "L4_LBC",
-        "L4_MC": "L4_MC",
-        "L4_NBC": "L4_NBC",
-        "L4_NGC": "L4_NGC",
-        "L4_SBC": "L4_SBC",
-        "L4_SSC": "L4_SSC",
-        "L4_TPC": "L4_TPC",
-        "L4_UPC": "L4_UPC",
-        "L5_BP": "L5_BP",
-        "L5_BTC": "L5_BTC",
-        "L5_CHC": "L5_CHC",
-        "L5_DBC": "L5_DBC",
-        "L5_LBC": "L5_LBC",
-        "L5_MC": "L5_MC",
-        "L5_NBC": "L5_NBC",
-        "L5_NGC": "L5_NGC",
-        "L5_SBC": "L5_SBC",
-        "L5_TPC:A": "L5_TPC:A",
-        "L5_TPC:B": "L5_TPC:B",
-        "L5_TPC:C": "L5_TPC:C",
-        "L5_UPC": "L5_UPC",
-        "L6_BP": "L6_BP",
-        "L6_BPC": "L6_BPC",
-        "L6_BTC": "L6_BTC",
-        "L6_CHC": "L6_CHC",
-        "L6_DBC": "L6_DBC",
-        "L6_HPC": "L6_HPC",
-        "L6_IPC": "L6_IPC",
-        "L6_LBC": "L6_LBC",
-        "L6_MC": "L6_MC",
-        "L6_NBC": "L6_NBC",
-        "L6_NGC": "L6_NGC",
-        "L6_SBC": "L6_SBC",
-        "L6_TPC:A": "L6_TPC:A",
-        "L6_TPC:C": "L6_TPC:C",
-        "L6_UPC": "L6_UPC"
+  "atlas": "/gpfs/bbp.cscs.ch/project/proj83/data/atlas/S1/MEAN/P14-MEAN",
+  "regions": [
+    "S1FL",
+    "S1HL",
+    "S1Sh",
+    "S1ULp",
+    "S1Tr",
+    "S1J",
+    "S1DZ",
+    "S1DZO"
+  ],
+  "depths": "/gpfs/bbp.cscs.ch/project/proj83/data/atlas/S1/MEAN/P14-MEAN/distance.nrrd",
+  "depth_label": "Dist. fr. white matter (um)",
+  "nbins": 100,
+  "profiles_fn": "abs_depth_profiles.pkl",
+  "circuit": "/gpfs/bbp.cscs.ch/project/proj83/circuits/Bio_M/20200805/CircuitConfig",
+  "plots": {
+    "S1FL_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1FL"
+    },
+    "S1FL_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1FL"
+    },
+    "S1FL_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1FL"
+    },
+    "S1FL_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1FL"
+    },
+    "S1FL_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1FL"
+    },
+    "S1FL_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1FL"
+    },
+    "S1FL_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1FL"
+    },
+    "S1FL_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1FL"
+    },
+    "S1FL_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1FL"
+    },
+    "S1FL_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1FL"
+    },
+    "S1FL_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1FL"
+    },
+    "S1FL_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1FL"
+    },
+    "S1FL_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1FL"
+    },
+    "S1FL_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1FL"
+    },
+    "S1FL_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1FL"
+    },
+    "S1FL_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1FL"
+    },
+    "S1HL_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1HL"
+    },
+    "S1HL_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1HL"
+    },
+    "S1HL_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1HL"
+    },
+    "S1HL_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1HL"
+    },
+    "S1HL_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1HL"
+    },
+    "S1HL_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1HL"
+    },
+    "S1HL_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1HL"
+    },
+    "S1HL_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1HL"
+    },
+    "S1HL_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1HL"
+    },
+    "S1HL_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1HL"
+    },
+    "S1HL_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1HL"
+    },
+    "S1HL_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1HL"
+    },
+    "S1HL_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1HL"
+    },
+    "S1HL_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1HL"
+    },
+    "S1HL_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1HL"
+    },
+    "S1HL_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1HL"
+    },
+    "S1Sh_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1Sh"
+    },
+    "S1Sh_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1Sh"
+    },
+    "S1ULp_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1ULp"
+    },
+    "S1ULp_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1ULp"
+    },
+    "S1Tr_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1Tr"
+    },
+    "S1Tr_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1Tr"
+    },
+    "S1J_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1J"
+    },
+    "S1J_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1J"
+    },
+    "S1J_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1J"
+    },
+    "S1J_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1J"
+    },
+    "S1J_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1J"
+    },
+    "S1J_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1J"
+    },
+    "S1J_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1J"
+    },
+    "S1J_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1J"
+    },
+    "S1J_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1J"
+    },
+    "S1J_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1J"
+    },
+    "S1J_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1J"
+    },
+    "S1J_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1J"
+    },
+    "S1J_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1J"
+    },
+    "S1J_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1J"
+    },
+    "S1J_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1J"
+    },
+    "S1J_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1J"
+    },
+    "S1J_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1J"
+    },
+    "S1J_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1J"
+    },
+    "S1J_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1J"
+    },
+    "S1J_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1J"
+    },
+    "S1J_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1J"
+    },
+    "S1J_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1J"
+    },
+    "S1J_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1J"
+    },
+    "S1J_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1J"
+    },
+    "S1J_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1J"
+    },
+    "S1J_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1J"
+    },
+    "S1J_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1J"
+    },
+    "S1J_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1J"
+    },
+    "S1J_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1J"
+    },
+    "S1J_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1J"
+    },
+    "S1J_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1J"
+    },
+    "S1J_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1J"
+    },
+    "S1J_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1J"
+    },
+    "S1J_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1J"
+    },
+    "S1J_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1J"
+    },
+    "S1J_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1J"
+    },
+    "S1J_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1J"
+    },
+    "S1J_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1J"
+    },
+    "S1J_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1J"
+    },
+    "S1J_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1J"
+    },
+    "S1J_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1J"
+    },
+    "S1J_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1J"
+    },
+    "S1J_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1J"
+    },
+    "S1J_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1J"
+    },
+    "S1J_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1J"
+    },
+    "S1J_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1J"
+    },
+    "S1J_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1J"
+    },
+    "S1J_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1J"
+    },
+    "S1J_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1J"
+    },
+    "S1J_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1J"
+    },
+    "S1J_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1J"
+    },
+    "S1J_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1J"
+    },
+    "S1J_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1J"
+    },
+    "S1J_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1J"
+    },
+    "S1J_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1J"
+    },
+    "S1J_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1J"
+    },
+    "S1J_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1J"
+    },
+    "S1J_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1J"
+    },
+    "S1J_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1J"
+    },
+    "S1J_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1J"
+    },
+    "S1J_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1J"
+    },
+    "S1J_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1J"
+    },
+    "S1J_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1J"
+    },
+    "S1J_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1J"
+    },
+    "S1J_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1J"
+    },
+    "S1DZ_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1DZ"
+    },
+    "S1DZ_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1DZ"
+    },
+    "S1DZO_profile_MC.png": {
+      "types": ".*_.*MC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_BC.png": {
+      "types": ".*_.*BC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_SBC.png": {
+      "types": ".*_.*SBC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_NBC.png": {
+      "types": ".*_.*NBC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_BTC.png": {
+      "types": ".*_.*BTC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_LBC.png": {
+      "types": ".*_.*LBC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_PC.png": {
+      "types": ".*_.*PC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_TPC.png": {
+      "types": ".*_.*TPC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_TPC:A.png": {
+      "types": ".*_.*TPC:A*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_TPC:B.png": {
+      "types": ".*_.*TPC:B*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_TPC:C.png": {
+      "types": ".*_.*TPC:C*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_UPC.png": {
+      "types": ".*_.*UPC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_IPC.png": {
+      "types": ".*_.*IPC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_profile_HPC.png": {
+      "types": ".*_.*HPC*",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L1_DAC": {
+      "types": "L1_DAC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L1_HAC": {
+      "types": "L1_HAC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L1_LAC": {
+      "types": "L1_LAC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L1_NGC": {
+      "types": "L1_NGC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L1_SAC": {
+      "types": "L1_SAC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_BP": {
+      "types": "L23_BP",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_BTC": {
+      "types": "L23_BTC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_CHC": {
+      "types": "L23_CHC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_DBC": {
+      "types": "L23_DBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_LBC": {
+      "types": "L23_LBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_MC": {
+      "types": "L23_MC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_NBC": {
+      "types": "L23_NBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_NGC": {
+      "types": "L23_NGC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L23_SBC": {
+      "types": "L23_SBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L2_IPC": {
+      "types": "L2_IPC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L2_TPC:A": {
+      "types": "L2_TPC:A",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L2_TPC:B": {
+      "types": "L2_TPC:B",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L3_TPC:A": {
+      "types": "L3_TPC:A",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L3_TPC:B": {
+      "types": "L3_TPC:B",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L3_TPC:C": {
+      "types": "L3_TPC:C",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_BP": {
+      "types": "L4_BP",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_BTC": {
+      "types": "L4_BTC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_CHC": {
+      "types": "L4_CHC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_DBC": {
+      "types": "L4_DBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_LBC": {
+      "types": "L4_LBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_MC": {
+      "types": "L4_MC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_NBC": {
+      "types": "L4_NBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_NGC": {
+      "types": "L4_NGC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_SBC": {
+      "types": "L4_SBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_SSC": {
+      "types": "L4_SSC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_TPC": {
+      "types": "L4_TPC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L4_UPC": {
+      "types": "L4_UPC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_BP": {
+      "types": "L5_BP",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_BTC": {
+      "types": "L5_BTC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_CHC": {
+      "types": "L5_CHC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_DBC": {
+      "types": "L5_DBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_LBC": {
+      "types": "L5_LBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_MC": {
+      "types": "L5_MC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_NBC": {
+      "types": "L5_NBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_NGC": {
+      "types": "L5_NGC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_SBC": {
+      "types": "L5_SBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_TPC:A": {
+      "types": "L5_TPC:A",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_TPC:B": {
+      "types": "L5_TPC:B",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_TPC:C": {
+      "types": "L5_TPC:C",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L5_UPC": {
+      "types": "L5_UPC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_BP": {
+      "types": "L6_BP",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_BPC": {
+      "types": "L6_BPC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_BTC": {
+      "types": "L6_BTC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_CHC": {
+      "types": "L6_CHC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_DBC": {
+      "types": "L6_DBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_HPC": {
+      "types": "L6_HPC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_IPC": {
+      "types": "L6_IPC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_LBC": {
+      "types": "L6_LBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_MC": {
+      "types": "L6_MC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_NBC": {
+      "types": "L6_NBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_NGC": {
+      "types": "L6_NGC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_SBC": {
+      "types": "L6_SBC",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_TPC:A": {
+      "types": "L6_TPC:A",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_TPC:C": {
+      "types": "L6_TPC:C",
+      "regions": "S1DZO"
+    },
+    "S1DZO_L6_UPC": {
+      "types": "L6_UPC",
+      "regions": "S1DZO"
     }
+  }
 }
