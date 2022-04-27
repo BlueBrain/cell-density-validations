@@ -10,6 +10,7 @@ from nrrdhlp.masker import Masker
 from nrrdhlp.hierarchyhlp import *
 from nrrdhlp.find_atlas_files import *
 from nrrdhlp.mtypes import parse_mtype
+from nrrdhlp.volume_arithmetics import load_with_arithmetics
 
 
 def make_region_profiles(depths, regions, region_masks, density_fn, d_bins):
@@ -19,7 +20,7 @@ def make_region_profiles(depths, regions, region_masks, density_fn, d_bins):
     res = []
     idx = []
     for region, msk in zip(regions, region_masks):
-        d_idx = numpy.digitize(depths.raw[msk], d_bins) - 1
+        d_idx = numpy.digitize(depths[msk], d_bins) - 1
         d = density.raw[msk]
         dens_smpls = [d[d_idx == i] for i in range(len(d_bins) - 1)]
         res.append(list(map(numpy.mean, dens_smpls)))
@@ -52,17 +53,18 @@ def configure():
 
     annotation_fn = cfg.get("annotations", find_regions(root))
     depth_fn = cfg.get("depths", os.path.join(root, "[PH]y.nrrd"))
-    depths = voxcell.VoxelData.load_nrrd(depth_fn)
+    depths = load_with_arithmetics(depth_fn, at_root=root)
     #depths.raw = depths.raw[:, :, :, 1]
-    mx_depths = cfg.get("max_depth", numpy.nanmax(depths.raw))
+    mx_depths = cfg.get("max_depth", numpy.nanmax(depths))
     nbins = cfg.get("nbins", 200)
 
     if len(sys.argv) > 2:
         out_fn = sys.argv[2]
     else:
-        out_fn = cfg.get("out_fn", "layer_profiles.pkl")
+        out_fn = cfg.get("profiles_fn", "reference_layer_profiles.pkl")
 
     masker = Masker(hier_fn, annotation_fn)
+    #TODO: Assert that the annotations in the masker and depths have matching shapes
     return density_files, hier_fn, masker, depths, regions, out_fn, mx_depths, nbins
 
 

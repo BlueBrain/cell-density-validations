@@ -1,10 +1,10 @@
 {
     "atlas": "/gpfs/bbp.cscs.ch/project/proj83/data/atlas/S1/MEAN/P14-MEAN",
     "regions": ["S1FL", "S1HL", "S1Sh", "S1ULp", "S1M", "S1J", "S1DZ", "S1DZO"],
-    "depths": "/gpfs/bbp.cscs.ch/project/proj83/data/atlas/S1/MEAN/P14-MEAN/distance.nrrd",
-    "depth_label": "Dist. fr. white matter (um)",
+    "depths": ["divide", [["subtract", ["height.nrrd", "distance.nrrd"]], "height.nrrd"]],
+    "depth_label": "nrml. depth",
     "nbins": 100,
-    "profiles_fn": "tst_depth_profiles.pkl",
+    "profiles_fn": "tst_depth_profiles_rel.pkl",
     "circuit": "/gpfs/bbp.cscs.ch/project/proj83/circuits/Bio_M/20200805/CircuitConfig",
     "plots": {
         "profile_MC.png": ".*_.*MC*",

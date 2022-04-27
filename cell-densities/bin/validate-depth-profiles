@@ -1,0 +1,160 @@
+#!/usr/bin/env python
+import numpy
+import voxcell
+import pandas
+import os
+
+from matplotlib import pyplot as plt
+
+from nrrdhlp.find_atlas_files import *
+from nrrdhlp.volume_arithmetics import load_with_arithmetics
+
+def bin_depth_array(raw_depth, reference):
+    """
+    Bin depth values of the input .nrrd volume using the same bins as the index of the reference
+    Inputs:
+    raw_depth: numpy.array
+    reference: pandas.DataFrame (only the index is considered)
+    """
+    bin_centers = reference.index.values
+    dbin = numpy.mean(numpy.diff(bin_centers))
+    bins = numpy.hstack([bin_centers, bin_centers[-1] + dbin]) - dbin / 2
+    
+    depth_bin_arr = (numpy.digitize(raw_depth, bins=bins) - 1).astype(float)
+    depth_bin_arr[depth_bin_arr < 0] = numpy.NaN
+    depth_bin_arr[depth_bin_arr >= len(bin_centers)] = numpy.NaN
+    depth_bin_arr[~numpy.isnan(depth_bin_arr)] = \
+        bin_centers[depth_bin_arr[~numpy.isnan(depth_bin_arr)].astype(int)]
+    
+    return depth_bin_arr
+
+def circuit_cell_counts_per_depth(nrn, depth_bin_arr):
+    def _counter(df):
+        return df.groupby(["i", "j", "k"])["i"].agg(len)
+
+    per_voxel_count = nrn.groupby(["region", "mtype"]).apply(_counter)
+    per_voxel_count.name = "count"
+    per_voxel_count = per_voxel_count.reset_index()
+
+    idx = depth_bin_arr[per_voxel_count["i"], per_voxel_count["j"], per_voxel_count["k"]]
+    per_voxel_count["nrml_depth"] = idx
+
+    per_depth_count = per_voxel_count.pivot_table(index=["nrml_depth"], columns=["region", "mtype"],
+                                                  fill_value=0, aggfunc="sum")["count"]
+    return per_depth_count
+
+def voxel_counts_per_depth(per_depth_count, depth_bin_arr, hier, ann):
+    A = per_depth_count.columns.to_frame().reset_index(drop=True)
+
+    values = []
+    indices = []
+
+    for reg in A["region"].drop_duplicates():
+        _idx = list(hier.find(reg, "acronym", with_descendants=True))
+        reg_mask = numpy.isin(ann.raw, _idx)
+        db = depth_bin_arr[reg_mask]
+        v = pandas.Series(db).value_counts()
+        #assert v.sum() * ann.voxel_volume == ann.volume(_idx)
+        
+        values.append(v)
+        indices.append(reg)
+
+    per_depth_voxel_count = pandas.concat(values, axis=1, keys=indices, names=["region"])
+    return per_depth_voxel_count
+
+def plot_single(data, ref, type_regexp, depth_lbl):
+    import re
+
+    data = data.copy(); ref = ref.copy()
+    data.columns = data.columns.reorder_levels(["mtype", "region"])
+    ref.columns = ref.columns.reorder_levels(["type", "region"])
+    
+    lst_mtypes = [_x for _x in data.columns.levels[0] if re.match(type_regexp, _x) is not None]
+    lst_types = [_x for _x in ref.columns.levels[0] if re.match(type_regexp, _x) is not None]
+    
+    data = data[lst_mtypes].sum(axis=1, level="region")
+    ref = ref[lst_types].sum(axis=1, level="region")
+    
+    data_mn = data.mean(axis=1); data_sd = data.std(axis=1)
+    ref_mn = ref.mean(axis=1); ref_sd = ref.std(axis=1)
+    
+    fig = plt.figure(figsize=(4.5, 1.5))
+    ax = fig.gca()
+    
+    ax.errorbar(ref_mn.index, ref_mn.values, yerr=ref_sd.values, color="red", lw=1.5)
+    ax.errorbar(data_mn.index, data_mn.values, yerr=data_sd.values, color="blue", lw=0.5)
+    
+    ax.set_xlabel(depth_lbl)
+    ax.set_ylabel("Density (/ mm^3)")
+    ax.set_frame_on(False)
+
+    return fig
+
+def plot_all(df_data, df_ref, plots_root, plots_dict, depth_lbl):
+    for plt_name, plt_re in plots_dict.items():
+        fig = plot_single(df_data, df_ref, plt_re, depth_lbl)
+        fig.savefig(os.path.join(plots_root, plt_name))
+        plt.close(fig)
+
+def configure():
+    import sys
+    import json
+    import bluepy
+
+    with open(sys.argv[1], "r") as fid:
+        cfg = json.load(fid)
+    root = cfg.get("atlas",
+                   os.path.split(sys.argv[1])[0])
+    
+    depth_fn = cfg.get("depths", os.path.join(root, "[PH]y.nrrd"))
+    depths = load_with_arithmetics(depth_fn, at_root=root)
+    depth_lbl = cfg.get("depth_label", "Depth (um)")
+
+    hier_fn = cfg.get("hierarchy", find_hierarchy(root))
+    hier = voxcell.RegionMap.load_json(hier_fn)
+
+    annotation_fn = cfg.get("annotations", find_regions(root))
+    ann = ann = voxcell.VoxelData.load_nrrd(annotation_fn)
+
+    circ_fn = cfg["circuit"]
+    circ = bluepy.Circuit(circ_fn)
+
+    fn_tgt_profiles = None
+    plots_root = "layer_profiles"
+
+    for arg in sys.argv[2:]:
+        if os.path.isfile(arg):
+            fn_tgt_profiles = arg
+        elif os.path.isdir(arg):
+            plots_root = arg
+        else:
+            raise ValueError("{0} is neither a file nor a directory...".format(arg))
+    
+    if fn_tgt_profiles is None:
+        fn_tgt_profiles = cfg["profiles_fn"]
+    tgt_profiles = pandas.read_pickle(fn_tgt_profiles)
+
+    if not os.path.exists(plots_root):
+        os.makedirs(plots_root)
+    #TODO: Assert that ann and depths have matching shapes
+    
+    return depths, hier, ann, circ, tgt_profiles, plots_root, cfg["plots"], depth_lbl
+
+
+def main():
+    y, hier, ann, circ, tgt_profiles, plots_root, plots, depth_lbl = configure()
+
+    nrn = circ.cells.get(properties=["region", "mtype", "x", "y", "z"])
+    ijk = ann.positions_to_indices(nrn[["x", "y", "z"]].values)
+    nrn["i"] = ijk[:, 0]; nrn["j"] = ijk[:, 1]; nrn["k"] = ijk[:, 2]
+
+    depth_bin_arr = bin_depth_array(y, tgt_profiles)
+    per_depth_count = circuit_cell_counts_per_depth(nrn, depth_bin_arr)
+    per_depth_voxel_count = voxel_counts_per_depth(per_depth_count, depth_bin_arr, hier, ann)
+    per_depth_density = 1E9 * per_depth_count / (per_depth_voxel_count * ann.voxel_volume)
+
+    plot_all(per_depth_density, tgt_profiles, plots_root, plots, depth_lbl)
+
+
+if __name__ == "__main__":
+    main()
