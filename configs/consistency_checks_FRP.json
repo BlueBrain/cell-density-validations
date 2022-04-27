@@ -1,0 +1,36 @@
+{
+  "annotations": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/annotations.nrrd",
+  "hierarchy": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/brain_regions.json",
+  "circuits": {
+    "proj_82": "/gpfs/bbp.cscs.ch/project/proj82/scratch/circuits/CircuitConfig_functional"
+  },
+  "nrrd": {
+    "L5-tpc-a": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L5_TPC:A.nrrd",
+    "L5-tpc-b": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L5_TPC:B.nrrd",
+    "L5-tpc-c": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210202/[cell_density]L5_TPC:C.nrrd",
+    "exc": "/gpfs/bbp.cscs.ch/home/rodarie/new_densities/circuit_building/densities_EXC.nrrd"
+  },
+  "tests": [
+    {
+      "left": ["exc"],
+      "right": [{"circuit": "proj_82", "filters": {"synapse_class": "EXC"}}],
+      "mask": "FRP5",
+      "tolerance": {"relative": 1E-6}
+    },
+    {
+      "left": ["L5-tpc-a"],
+      "right": [{"circuit": "proj_82", "filters": {"mtype": "L5_TPC:A"}}],
+      "mask": "FRP",
+      "tolerance": {"relative": 1E-6}
+    },
+    {
+      "left": ["L5-tpc-a"],
+      "right": [{"circuit": "proj_82", "filters": {"mtype": "L5_TPC:A"}}],
+      "mask": "SSp-ll",
+      "tolerance": {"relative": 1E-6}
+    }
+
+  ]
+}
+
+
