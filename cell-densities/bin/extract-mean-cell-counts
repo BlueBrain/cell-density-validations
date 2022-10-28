@@ -75,10 +75,10 @@ def cell_counts_in_region(region_acronym, yml_config, token=None, endpoint=None)
     # atlas_release._store_metadata["_rev"]
 
     df, resources = query_for_cell_densities(forge)
-    masker = Masker.from_knowledge_graph(forge)
+    masker = Masker.from_knowledge_graph(forge, token=token)
 
     msk = masker.mask(region_acronym)
-    tgt_ids = masker.target_ids()
+    tgt_ids = masker.target_ids(region_acronym)
     sub_regions = masker.annotation.raw[msk]
     rel_df = df.loc[df["brainLocation_brainRegion_label"].apply(intersection_size(masker.rmap, tgt_ids))]
 
@@ -94,11 +94,13 @@ def cell_counts_in_region(region_acronym, yml_config, token=None, endpoint=None)
 def main(yml_cfg, region_acronym, out_fn):
     import os
     
+    token = None
     # TODO: Workaround to enter token. If entered manually, it is truncated at 4095 characters.
     if os.path.exists(".token"):
         with open(".token", "r") as fid:
             ln = fid.readlines()
         token = ln[0].strip()
+        print("Using token with length {0}".format(len(token)))
     
     composition = cell_counts_in_region(region_acronym, yml_cfg, token=token)
     composition.to_json(out_fn, orient="table")

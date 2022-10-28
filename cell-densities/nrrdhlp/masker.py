@@ -80,16 +80,15 @@ class Masker(object):
     def from_knowledge_graph(cls, yml_config_or_forge, endpoint=None, token=None):
         import getpass
         from kgforge.core import KnowledgeGraphForge
-
-        if token is None:
-            token = getpass.getpass()
-        if endpoint is None:
-            endpoint = default_endpoint
         
         if isinstance(yml_config_or_forge, KnowledgeGraphForge):
             forge = yml_config_or_forge
         else:
             print("Setting up kgforge...")
+            if token is None:
+                token = getpass.getpass()
+            if endpoint is None:
+                endpoint = default_endpoint
             forge = KnowledgeGraphForge(yml_config_or_forge,
                                 token=token,
                                 endpoint=endpoint, 
