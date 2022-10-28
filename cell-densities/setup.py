@@ -27,7 +27,8 @@ setup(
     scripts=[
         "bin/check-density-consistency",
         "bin/densities-across-regions",
-        "bin/adjust-densities-across-regions"
+        "bin/adjust-densities-across-regions",
+        "bin/extract-mean-cell-counts"
     ],
     python_requires=">=3.6",
     classifiers=[
