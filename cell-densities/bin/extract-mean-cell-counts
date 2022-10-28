@@ -91,10 +91,18 @@ def cell_counts_in_region(region_acronym, yml_config, token=None, endpoint=None)
 
     return composition
 
-def main():
-    import sys
-    composition = cell_counts_in_region(sys.argv[2], sys.argv[1])
-    composition.to_json(sys.argv[3], orient="table")
+def main(yml_cfg, region_acronym, out_fn):
+    import os
+    
+    # TODO: Workaround to enter token. If entered manually, it is truncated at 4095 characters.
+    if os.path.exists(".token"):
+        with open(".token", "r") as fid:
+            ln = fid.readlines()
+        token = ln[0].strip()
+    
+    composition = cell_counts_in_region(region_acronym, yml_cfg, token=token)
+    composition.to_json(out_fn, orient="table")
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(sys.argv[1], sys.argv[2], sys.argv[3])
