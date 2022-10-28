@@ -13,12 +13,12 @@ production_bbp_atlas = "https://bbp.epfl.ch/neurosciencegraph/data/4906ab85-694f
 
 
 def download_and_read(forge, thing, reader, distribution_id=None):
-    print("Downloading: {0}".format(thing))
     if distribution_id is None: distribution_id = 0
     if not isinstance(thing.distribution, list):
         distribution = [thing.distribution]
     else:
         distribution = thing.distribution
+    print("Downloading: {0}".format(distribution[distribution_id].name))
     forge.download(thing, "distribution.contentUrl", ".", overwrite=True)
 
     return reader(distribution[distribution_id].name)
@@ -77,7 +77,7 @@ class Masker(object):
             raise ValueError("Mask specification error: {0}".format(str(specs)))
     
     @classmethod
-    def from_knowledge_graph(cls, yml_config, endpoint=None, token=None):
+    def from_knowledge_graph(cls, yml_config_or_forge, endpoint=None, token=None):
         import getpass
         from kgforge.core import KnowledgeGraphForge
 
@@ -85,11 +85,16 @@ class Masker(object):
             token = getpass.getpass()
         if endpoint is None:
             endpoint = default_endpoint
-        print("Setting up kgforge...")
-        forge = KnowledgeGraphForge(yml_config,
-                            token=token,
-                            endpoint=endpoint, 
-                            bucket="bbp/atlas")
+        
+        if isinstance(yml_config_or_forge, KnowledgeGraphForge):
+            forge = yml_config_or_forge
+        else:
+            print("Setting up kgforge...")
+            forge = KnowledgeGraphForge(yml_config_or_forge,
+                                token=token,
+                                endpoint=endpoint, 
+                                bucket="bbp/atlas")
+        
         atlas_release = forge.retrieve(production_bbp_atlas)
         atlas_release._store_metadata["_rev"]
         parcellation_ontology = forge.retrieve(atlas_release.parcellationOntology.id, cross_bucket=True)

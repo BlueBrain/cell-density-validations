@@ -1,0 +1,100 @@
+import resource
+from nrrdhlp import Masker
+import voxcell
+import getpass
+import numpy
+import pandas
+
+from kgforge.core import KnowledgeGraphForge
+from nrrdhlp.masker import default_endpoint, production_bbp_atlas, download_and_read
+
+def query_for_cell_densities(forge):
+    resources = forge.search({"type":"METypeDensity","atlasRelease":{"@id":production_bbp_atlas}}, limit=1000, debug=False)
+    reshaped_resources = forge.reshape(resources, keep=["id","type", "annotation.hasBody.id", "annotation.hasBody.label",
+                     "brainLocation.brainRegion.id", "brainLocation.brainRegion.label", "distribution.atLocation.location"])
+    df = forge.as_dataframe(reshaped_resources, nesting="_")
+
+    df["mtype"] = df.apply(lambda row: (row.annotation[0]["hasBody"]["label"],row.annotation[0]["hasBody"]["id"]) , axis=1) 
+    df["etype"] = df.apply(lambda row: (row.annotation[1]["hasBody"]["label"],row.annotation[1]["hasBody"]["id"]) , axis=1) 
+    type_column = df.pop('type')
+    mtype_column = df.pop('mtype')
+    etype_column = df.pop('etype')
+
+    df.insert(0, 'type', type_column)
+    df.insert(1, 'mtype', mtype_column)
+    df.insert(2, 'etype', etype_column)
+    df.drop(columns="annotation")
+
+    return df, resources
+
+def intersection_size(rmap, tgt_ids):
+    def func_to_apply(region_label):
+        file_ids = rmap.find(region_label, "acronym", with_descendants=True)
+        return len(file_ids.intersection(tgt_ids)) > 0
+    return func_to_apply
+
+def add_info(out_df, row):
+    out_df["mtype"] = row["mtype"][0]
+    out_df["etype"] = row["etype"][0]
+    
+    if "PC" in row["mtype"][0]:
+        out_df["synapse_class"] = "EXC"
+    elif row["mtype"] == "Excitatory":
+        out_df["synapse_class"] = "EXC"
+    elif row["mtype"] == "L4_SS":
+        out_df["synapse_class"] = "EXC"
+    else:
+        out_df["synapse_class"] = "INH"
+
+def build_from_row(forge, masker, msk, sub_regions, resources):
+    def func_to_return(row):
+        i = row.name
+        V = download_and_read(forge, resources[i], voxcell.VoxelData.load_nrrd)
+        v = V.raw[msk]
+
+        _df = pandas.DataFrame({"sub-region": sub_regions, "count": v * V.voxel_volume / (1000 ** 3)})
+        _df = _df.groupby("sub-region").agg("sum").reset_index()
+        _df["sub-region"] = [masker.rmap.get(_x, "acronym") for _x in _df["sub-region"]]
+        add_info(_df, row)
+        
+        return _df
+    return func_to_return
+
+def cell_counts_in_region(region_acronym, yml_config, token=None, endpoint=None):
+    if endpoint is None:
+        endpoint = default_endpoint
+    if token is None:
+        token = getpass.getpass()
+    
+    forge = KnowledgeGraphForge(yml_config,
+                                token=token,
+                                endpoint=endpoint, 
+                                bucket="bbp/atlas")
+    
+    # atlas_release = forge.retrieve(production_bbp_atlas)
+    # atlas_release._store_metadata["_rev"]
+
+    df, resources = query_for_cell_densities(forge)
+    masker = Masker.from_knowledge_graph(forge)
+
+    msk = masker.mask(region_acronym)
+    tgt_ids = masker.target_ids()
+    sub_regions = masker.annotation.raw[msk]
+    rel_df = df.loc[df["brainLocation_brainRegion_label"].apply(intersection_size(masker.rmap, tgt_ids))]
+
+    func = build_from_row(forge, masker, msk, sub_regions, resources)
+
+    composition = pandas.concat([func(row[1]) for row in rel_df.iterrows()], axis=0)
+    cols = list(composition.columns)
+    cols.remove("count")
+    composition = composition.set_index(cols)
+
+    return composition
+
+def main():
+    import sys
+    composition = cell_counts_in_region(sys.argv[2], sys.argv[1])
+    composition.to_json(sys.argv[3], orient="table")
+
+if __name__ == "__main__":
+    main()
