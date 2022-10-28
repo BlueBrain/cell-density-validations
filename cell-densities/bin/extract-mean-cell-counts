@@ -33,7 +33,9 @@ def intersection_size(rmap, tgt_ids):
         return len(file_ids.intersection(tgt_ids)) > 0
     return func_to_apply
 
-def add_info(out_df, row):
+def add_info(forge, out_df, row):
+    # NOTE: E/I info and additional classification is supposed to be added here
+    # by looking up info on the m/e-types in the ontology!
     out_df["mtype"] = row["mtype"][0]
     out_df["etype"] = row["etype"][0]
     
@@ -41,7 +43,7 @@ def add_info(out_df, row):
         out_df["synapse_class"] = "EXC"
     elif row["mtype"] == "Excitatory":
         out_df["synapse_class"] = "EXC"
-    elif row["mtype"] == "L4_SS":
+    elif row["mtype"] == "L4_SSC":
         out_df["synapse_class"] = "EXC"
     else:
         out_df["synapse_class"] = "INH"
@@ -55,7 +57,7 @@ def build_from_row(forge, masker, msk, sub_regions, resources):
         _df = pandas.DataFrame({"sub-region": sub_regions, "count": v * V.voxel_volume / (1000 ** 3)})
         _df = _df.groupby("sub-region").agg("sum").reset_index()
         _df["sub-region"] = [masker.rmap.get(_x, "acronym") for _x in _df["sub-region"]]
-        add_info(_df, row)
+        add_info(forge, _df, row)
         
         return _df
     return func_to_return
@@ -103,6 +105,7 @@ def main(yml_cfg, region_acronym, out_fn):
         print("Using token with length {0}".format(len(token)))
     
     composition = cell_counts_in_region(region_acronym, yml_cfg, token=token)
+    composition = composition.groupby(composition.index.names).agg("sum")
     composition.to_json(out_fn, orient="table")
 
 if __name__ == "__main__":
