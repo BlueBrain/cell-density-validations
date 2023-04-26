@@ -21,7 +21,8 @@ setup(
     license="LGPL-3.0",
     install_requires=["numpy",
                       "pandas",
-                      "voxcell"
+                      "voxcell",
+                      "scipy"
                       ],
     packages=find_packages(),
     scripts=[
