@@ -54,7 +54,7 @@ class AnnotationWrapper(object):
         return self.lookup_method(parent)
     
     def make_new_region_id(self):
-        return int(numpy.max(list(self.hier._data.keys())) + 1 + numpy.random.randint(10))
+        return int(numpy.max(list(self.hier._data.keys())) + 1)
 
     def make_new_region(self, parent_id, **kwargs):
         if not hasattr(self, "replacement_ids"): self.replacement_ids = {}
@@ -140,7 +140,7 @@ class AnnotationWrapper(object):
                 raise ValueError("Unknown method: {0}".format(method))
         return count_direct + count_indirect, log
     
-    def launch_extrapolation(self, **kwargs):
+    def launch_fix(self, **kwargs):
         root_ids = [_id for _id, v in self.hier._parent.items() if v is None]
         log = ""
         for _id in root_ids:
@@ -149,91 +149,33 @@ class AnnotationWrapper(object):
 
         return log
 
-    def reconstruct_json_from_RegionMap(self, orig_hier) -> dict:
-        # Convenience variables
+    def update_json_new_hier(self, orig_hier) -> dict:
         out_hier = copy.deepcopy(orig_hier)
-        cn = "children"
 
-        # Assumptions:
-        # 1. All "children" keys have values of type <List>
-        # 2. Your hierarchy is only 12-levels deep, not counting the "message
-        # header" in file "hierarchy_l23split.json"
-        # 3. Only top-level region ID "root" is not a child of a "children" list
-        if orig_hier["id"] in self.replacement_ids.keys():
-            out_hier[cn].append(self.hier._data[self.replacement_ids[orig_hier["id"]]])
+        def _append_new_regions(node):
+          if isinstance(node, dict):
+              [_append_new_regions(ii) for ii in node["children"]]
+              if node["id"] in self.replacement_ids.keys():
+                  node["children"].append(self.hier._data[self.replacement_ids[node["id"]]])
+          return node
 
-        # Yes this is horrifically ugly, but after trying different
-        # recursion/yield/flattening strategies, decided on this verbose method
-        # due to the fact it works, has no weird edge cases, and is simple to
-        # understand.
-        for i1, c1 in enumerate(orig_hier[cn]):
-          if c1["id"] in self.replacement_ids.keys():
-            out_hier[cn][i1][cn].append(
-              self.hier._data[self.replacement_ids[c1["id"]]])
-          for i2, c2 in enumerate(orig_hier[cn][i1][cn]):
-            if c2["id"] in self.replacement_ids.keys():
-              out_hier[cn][i1][cn][i2][cn].append(
-                self.hier._data[self.replacement_ids[c2["id"]]])
-            for i3, c3 in enumerate(orig_hier[cn][i1][cn][i2][cn]):
-              if c3["id"] in self.replacement_ids.keys():
-                out_hier[cn][i1][cn][i2][cn][i3][cn].append(
-                  self.hier._data[self.replacement_ids[c3["id"]]])
-              for i4, c4 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn]):
-                if c4["id"] in self.replacement_ids.keys():
-                  out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn].append(
-                    self.hier._data[self.replacement_ids[c4["id"]]])
-                for i5, c5 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn]):
-                  if c5["id"] in self.replacement_ids.keys():
-                    out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn].append(
-                      self.hier._data[self.replacement_ids[c5["id"]]])
-                  for i6, c6 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn]):
-                    if c6["id"] in self.replacement_ids.keys():
-                      out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn].append(
-                        self.hier._data[self.replacement_ids[c6["id"]]])
-                    for i7, c7 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn]):
-                      if c7["id"] in self.replacement_ids.keys():
-                        out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn].append(
-                          self.hier._data[self.replacement_ids[c7["id"]]])
-                      for i8, c8 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn]):
-                        if c8["id"] in self.replacement_ids.keys():
-                          out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn].append(
-                            self.hier._data[self.replacement_ids[c8["id"]]])
-                        for i9, c9 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn]):
-                          if c9["id"] in self.replacement_ids.keys():
-                            out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn].append(
-                              self.hier._data[self.replacement_ids[c9["id"]]])
-                          for i10, c10 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn]):
-                            if c10["id"] in self.replacement_ids.keys():
-                              out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn][i10][cn].append(
-                                self.hier._data[self.replacement_ids[c10["id"]]])
-                            for i11, c11 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn][i10][cn]):
-                              if c11["id"] in self.replacement_ids.keys():
-                                out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn][i10][cn][i11][cn].append(
-                                  self.hier._data[self.replacement_ids[c11["id"]]])
-                              for i12, c12 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn][i10][cn][i11][cn]):
-                                if c12["id"] in self.replacement_ids.keys():
-                                  out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn][i10][cn][i11][cn][i12][cn].append(
-                                    self.hier._data[self.replacement_ids[c12["id"]]])
-                                # This last level is probably unnecessary, but left here just in case
-                                for i13, c13 in enumerate(orig_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn][i10][cn][i11][cn][i12][cn]):
-                                  if c13["id"] in self.replacement_ids.keys():
-                                    out_hier[cn][i1][cn][i2][cn][i3][cn][i4][cn][i5][cn][i6][cn][i7][cn][i8][cn][i9][cn][i10][cn][i11][cn][i12][cn][i13][cn].append(
-                                      self.hier._data[self.replacement_ids[c13["id"]]])
-        return out_hier
+        return _append_new_regions(out_hier)
 
 
-    def fix(self, fn_ann_out, fn_hier_out, fn_log, use_mba_hierarchy=True, **kwargs):
+    def fix(self, fn_ann_out, fn_hier_out, fn_log, use_mba_hierarchy=False, **kwargs):
 
-        log_str = self.launch_extrapolation(**kwargs)
+        log_str = self.launch_fix(**kwargs)
         self.ann.save_nrrd(fn_ann_out)
 
         # Only create a new hierarchy file if new regions were actually created
         if hasattr(self, "replacement_ids"):
             # Note that the "mba_hierarchy_v3l23split.json" file is the default
-            # one that Nexus downloads as the "hierarchy" file, not the older
-            # "hierarchy_l23split.json", which has a slightly different
-            # structure. In particular, the latter has a "header" while the
-            # former does not, and the latter uses a JSON indent of 1 space
+            # one that Nexus downloads as the "hierarchy" file, which is
+            # produced as an OUTPUT of the Atlas-pipeline. Instead, we want to
+            # work with the older "hierarchy_l23split.json", which has a
+            # slightly different structure and is an INPUT to the
+            # Atlas-pipeline. In particular, the latter has a "header" while
+            # the former does not, and the latter uses a JSON indent of 1 space
             # while the former uses 2 spaces.
             #
             # Also note that we must re-load the hierarchy files, since the the
@@ -243,7 +185,7 @@ class AnnotationWrapper(object):
                 # This option is for using the just-downloaded "mba_..." hierarchy version
                 with open('mba_hierarchy_v3l23split.json', 'r') as f:
                     original_hierarchy = json.load(f)
-                out_hierarchy = self.reconstruct_json_from_RegionMap(original_hierarchy)
+                out_hierarchy = self.update_json_new_hier(original_hierarchy)
                 with open(fn_hier_out, "w") as fid:
                     json.dump(out_hierarchy, fid, indent=2)
             else:
@@ -252,7 +194,7 @@ class AnnotationWrapper(object):
                     original_hierarchy = json.load(f)
                 # Remove the "header"
                 original_hierarchy = copy.deepcopy(original_hierarchy['msg'][0])
-                out_hierarchy = self.reconstruct_json_from_RegionMap(original_hierarchy)
+                out_hierarchy = self.update_json_new_hier(original_hierarchy)
                 # Re-add the "header" so it is as close as possible to "hierarchy_l23split.json"
                 out_hierarchy = {
                     "success": True,
