@@ -9,8 +9,14 @@ from scipy.spatial import KDTree
 from .atlas_from_forge import hierarchy_from_forge, annotation_from_forge
 
 class AnnotationWrapper(object):
-    def __init__(self, forge, method_dict={}):
-        self._ann = annotation_from_forge(forge)
+    def __init__(self, forge, method_dict={}, use_anno_file=None):
+
+        if use_anno_file:
+            self._ann = voxcell.voxel_data.VoxelData.load_nrrd(use_anno_file)
+            pass
+        else:
+            self._ann = annotation_from_forge(forge)
+
         self.hier = hierarchy_from_forge(forge)
         self.voxel_counts = pandas.Series(self._ann.raw.flatten()).value_counts()
         self._input_voxel_counts = self.voxel_counts.copy()
@@ -68,11 +74,13 @@ class AnnotationWrapper(object):
         self.hier._children[parent_id].append(reg_id)
         self.hier._children[reg_id] = []
 
+        # ADD ATTRIBUTES HERE
         entry_dict = {
             "id": reg_id,
             "acronym": reg_acronym,
             "name": reg_name,
-            "parent_structure_id": parent_id
+            "parent_structure_id": parent_id,
+            "representedInAnnotation": True,
         }
         entry_dict.update(kwargs)
         self.hier._data[reg_id] = entry_dict
@@ -161,7 +169,6 @@ class AnnotationWrapper(object):
 
         return _append_new_regions(out_hier)
 
-
     def fix(self, fn_ann_out, fn_hier_out, fn_log, use_mba_hierarchy=False, **kwargs):
 
         log_str = self.launch_fix(**kwargs)
@@ -220,3 +227,5 @@ class AnnotationWrapper(object):
                        100 * (value - 1.0))
         with open(fn_log, "w") as fid:
             fid.write(log_str)
+
+            
