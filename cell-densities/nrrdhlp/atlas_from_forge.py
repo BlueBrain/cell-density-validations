@@ -11,7 +11,7 @@ def download_and_read(forge, thing, reader, distribution_id=None):
     print("Downloading: {0}".format(distribution[distribution_id].name))
     forge.download(thing, "distribution.contentUrl", ".", overwrite=True)
 
-    return reader(distribution[distribution_id].name)
+    return distribution[distribution_id].name, reader(distribution[distribution_id].name)
 
 
 def query_for_cell_densities(forge):
@@ -40,7 +40,7 @@ def annotation_from_forge(forge):
     atlas_release._store_metadata["_rev"]
     parcellation_volume = forge.retrieve(atlas_release.parcellationVolume.id)
     print("Starting download of annotation file...")
-    ann = download_and_read(forge, parcellation_volume, VoxelData.load_nrrd)
+    _, ann = download_and_read(forge, parcellation_volume, VoxelData.load_nrrd)
     print("...done!")
     return ann
 
@@ -51,6 +51,6 @@ def hierarchy_from_forge(forge):
     atlas_release._store_metadata["_rev"]
     parcellation_ontology = forge.retrieve(atlas_release.parcellationOntology.id, cross_bucket=True)
     print("Starting download of hierarchy file...")
-    hier = download_and_read(forge, parcellation_ontology, RegionMap.load_json)
+    hier_file, hier = download_and_read(forge, parcellation_ontology, RegionMap.load_json)
     print("...done!")
-    return hier
+    return hier_file, hier

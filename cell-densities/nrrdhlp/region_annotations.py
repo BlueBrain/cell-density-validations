@@ -6,18 +6,23 @@ import pandas
 import voxcell
 from scipy.spatial import KDTree
 
-from .atlas_from_forge import hierarchy_from_forge, annotation_from_forge
-
 class AnnotationWrapper(object):
-    def __init__(self, forge, method_dict={}, use_anno_file=None):
+    def __init__(self, forge, method_dict={}, use_hier_file=None, use_anno_file=None):
 
         if use_anno_file:
             self._ann = voxcell.voxel_data.VoxelData.load_nrrd(use_anno_file)
             pass
         else:
+            from .atlas_from_forge import annotation_from_forge
             self._ann = annotation_from_forge(forge)
 
-        self.hier = hierarchy_from_forge(forge)
+        if use_hier_file:
+            self.hier_file = use_hier_file
+            self.hier = voxcell.nexus.voxelbrain.RegionMap.load_json(use_hier_file)
+        else:
+            from .atlas_from_forge import hierarchy_from_forge
+            self.hier_file, self.hier = hierarchy_from_forge(forge)
+
         self.voxel_counts = pandas.Series(self._ann.raw.flatten()).value_counts()
         self._input_voxel_counts = self.voxel_counts.copy()
 
@@ -197,7 +202,7 @@ class AnnotationWrapper(object):
                     json.dump(out_hierarchy, fid, indent=2)
             else:
                 # This option is for using the original "hierarchy_l23split.json" hierarchy version
-                with open('hierarchy_l23split.json', 'r') as f:
+                with open(self.hier_file, 'r') as f:
                     original_hierarchy = json.load(f)
                 # Remove the "header"
                 original_hierarchy = copy.deepcopy(original_hierarchy['msg'][0])
@@ -227,5 +232,3 @@ class AnnotationWrapper(object):
                        100 * (value - 1.0))
         with open(fn_log, "w") as fid:
             fid.write(log_str)
-
-            
