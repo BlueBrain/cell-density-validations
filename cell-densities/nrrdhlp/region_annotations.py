@@ -86,6 +86,11 @@ class AnnotationWrapper(object):
             "name": reg_name,
             "parent_structure_id": parent_id,
             "representedInAnnotation": True,
+            "color_hex_triplet": self.hier.get(parent_id, "color_hex_triplet"),
+            "st_level": self.hier.get(parent_id, "st_level") + 1,
+            "ontology_id": 1,  # fixed value
+            "hemisphere_id": 3,  # fixed value
+            "children": []
         }
         entry_dict.update(kwargs)
         self.hier._data[reg_id] = entry_dict
