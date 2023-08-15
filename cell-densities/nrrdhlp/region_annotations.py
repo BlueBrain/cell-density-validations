@@ -133,8 +133,10 @@ class AnnotationWrapper(object):
         self._input_voxel_counts[new_reg_id] = 0
     
     def __recursive_check__(self, reg_id, method=None, **kwargs):
+        # Seems to be number of voxels belonging to reg_id
         count_direct = self.voxel_counts.get(reg_id, 0)
         child_ids = self.hier._children[reg_id]
+        # Seems to be number of voxels belonging to children of reg_id
         count_indirect = 0
         log = ""
         for _id in child_ids:
@@ -142,19 +144,22 @@ class AnnotationWrapper(object):
             count_indirect += _count
             log += _log
 
-        if (count_direct > 0) and (count_indirect > 0):
-            log += """Region {0} has {1} voxels, {2} of which ({3}%) are directly associated\n
-            """.format(self.hier.get(reg_id, "name"), 
-                       count_direct + count_indirect,
-                       count_direct,
-                       (100.0 * count_direct) / (count_direct + count_indirect))
-            method = method or self.lookup_method(reg_id)
-            if method == "extrapolate":
+        method = method or self.lookup_method(reg_id)
+        if method == "extrapolate":
+            if (count_direct > 0) and (count_indirect > 0):
+                log += """Region {0} has {1} voxels, {2} of which ({3}%) are directly associated\n
+                """.format(self.hier.get(reg_id, "name"),
+                           count_direct + count_indirect,
+                           count_direct,
+                           (100.0 * count_direct) / (count_direct + count_indirect))
                 self.extrapolate_to_leaf_regions(reg_id, **kwargs)
-            elif method == "create":
+        elif method == "create":
+            # For creation, we don't care about voxels of children, only whether there are children
+            # or not.
+            if (count_direct > 0) and (len(child_ids) > 0):
                 self.create_new_leaf_region(reg_id)
-            else:
-                raise ValueError("Unknown method: {0}".format(method))
+        else:
+            raise ValueError("Unknown method: {0}".format(method))
         return count_direct + count_indirect, log
     
     def launch_fix(self, **kwargs):
