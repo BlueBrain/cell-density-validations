@@ -1,0 +1,22 @@
+include:
+  - project: nse/ci
+    file:
+      - /ci/lib/common.yml
+      - /ci/jobs/build-package.yml
+      - /ci/jobs/publish-package.yml
+
+stages:
+  - build
+  - publish
+
+build-package:
+  rules:
+    - when: on_success
+  variables:
+    PYTHON_PROJECT_DIR: cell-densities
+
+publish-package:
+  rules:
+    - if: $CI_COMMIT_TAG
+  variables:
+    PYTHON_PROJECT_DIR: cell-densities
