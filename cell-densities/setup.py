@@ -22,7 +22,8 @@ setup(
     install_requires=["numpy",
                       "pandas",
                       "voxcell",
-                      "scipy"
+                      "scipy",
+                      "atlas_splitter>=0.1.3"
                       ],
     packages=find_packages(),
     scripts=[

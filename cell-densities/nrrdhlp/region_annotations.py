@@ -5,6 +5,8 @@ import numpy
 import pandas
 import voxcell
 from scipy.spatial import KDTree
+from atlas_splitter.utils import id_from_acronym
+
 
 class AnnotationWrapper(object):
     def __init__(self, forge, method_dict={}, use_hier_file=None, use_anno_file=None):
@@ -64,16 +66,18 @@ class AnnotationWrapper(object):
             return "create"
         return self.lookup_method(parent)
     
+    # No longer used, replaced by atlas_splitter.utils.id_from_acronym
     def make_new_region_id(self):
         return int(numpy.max(list(self.hier._data.keys())) + 1)
 
     def make_new_region(self, parent_id, **kwargs):
-        if not hasattr(self, "replacement_ids"): self.replacement_ids = {}
+        if not hasattr(self, "replacement_ids"):
+            self.replacement_ids = {}
         parent_name = self.hier.get(parent_id, "name")
         parent_acronym = self.hier.get(parent_id, "acronym")
         reg_name = parent_name + ": Other"
         reg_acronym = parent_acronym + "_O"
-        reg_id = self.make_new_region_id()
+        reg_id = id_from_acronym(self.hier, reg_acronym)
 
         self.hier._parent[reg_id] = parent_id
         self.hier._children[parent_id].append(reg_id)
