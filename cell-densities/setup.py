@@ -23,7 +23,7 @@ setup(
                       "pandas",
                       "voxcell",
                       "scipy",
-                      "atlas_splitter>=0.1.3"
+                      "atlas_splitter>=0.1.4"
                       ],
     packages=find_packages(),
     scripts=[
