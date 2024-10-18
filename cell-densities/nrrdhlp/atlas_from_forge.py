@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 default_endpoint = "https://bbp.epfl.ch/nexus/v1"
 production_bbp_atlas = "https://bbp.epfl.ch/neurosciencegraph/data/4906ab85-694f-469d-962f-c0174e901885"
 
