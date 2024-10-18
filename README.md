@@ -115,3 +115,9 @@ Then, only neurons that match for all given properties the valid value(s) are co
     
 Example: {"Circuit": "my_circ", "group": "Excitatory"} and {"Circuit": "my_circ", "filters": {"synapse_class": "EXC"}}
 should both result in the same group of neurons.
+
+
+
+# Funding & Acknowledgment
+This development is supported by funding to the Blue Brain Project, a research center of the École polytechnique fédérale de Lausanne (EPFL), from the Swiss government's ETH Board of the Swiss Federal Institutes of Technology.
+Copyright © 2024 Blue Brain Project/EPFL
