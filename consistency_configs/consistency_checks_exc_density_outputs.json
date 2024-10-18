@@ -1,0 +1,1049 @@
+{
+  "annotations": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/brain_regions.nrrd",
+  "hierarchy": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/hierarchy.json",
+  "nrrd": {
+    "exc": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/densities_EXC.nrrd",
+    "exc-mtypes": [
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L2_IPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L2_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L2_TPC:B.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L3_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L3_TPC:C.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_TPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_UPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_SSC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_TPC:B.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_TPC:C.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_UPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_IPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_TPC:A.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_TPC:C.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_BPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_HPC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_UPC.nrrd"
+    ]
+  },
+  "tests": [
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        0
+      ],
+      "mask": [
+        "and",
+        [
+          "Isocortex",
+          "Layer1"
+        ]
+      ],
+      "modality": "count",
+      "tolerance": {
+        "absolute": 0.01
+      },
+      "comment": "Nothing excitatory in L1!"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "ACAd",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: ACAd"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "ACAv",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: ACAv"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "AId",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: AId"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "AIp",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: AIp"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "AIv",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: AIv"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "AUDp",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: AUDp"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "AUDpo",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: AUDpo"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "AUDv",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: AUDv"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "ECT",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: ECT"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "FRP",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: FRP"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "GU",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: GU"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "ILA",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: ILA"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "MOp",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: MOp"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "MOs",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: MOs"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "ORBl",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: ORBl"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "ORBm",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: ORBm"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "ORBvl",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: ORBvl"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "PERI",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: PERI"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "PL",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: PL"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "RSPd",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: RSPd"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "RSPv",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: RSPv"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "SSp-ll",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: SSp-ll"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "SSp-m",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: SSp-m"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "SSp-n",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: SSp-n"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "SSp-tr",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: SSp-tr"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "SSp-ul",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: SSp-ul"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "SSp-un",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: SSp-un"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "SSs",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: SSs"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "TEa",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: TEa"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISC",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISC"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISa",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISa"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISal",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISal"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISam",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISam"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISl",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISl"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISli",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISli"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISp",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISp"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISpl",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISpl"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISpm",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISpm"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISpor",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISpor"
+    },
+    {
+      "left": [
+        "exc-mtypes"
+      ],
+      "right": [
+        "exc"
+      ],
+      "mask": [
+        "and",
+        [
+          "VISrl",
+          [
+            "and",
+            [
+              "Isocortex",
+              "Layer[2-6]"
+            ]
+          ]
+        ]
+      ],
+      "tolerance": {
+        "relative": 1e-06
+      },
+      "comment": "Testing excitatory densities region by region: VISrl"
+    }
+  ]
+}

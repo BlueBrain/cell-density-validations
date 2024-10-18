@@ -1,0 +1,39 @@
+{
+  "annotations": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/brain_regions.nrrd",
+  "hierarchy": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/hierarchy.json",
+  "nrrd": {
+    "neurons": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/neu_density.nrrd",
+    "gad": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/densities_GAD.nrrd",
+    "exc": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/densities_EXC.nrrd",
+    "pv": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/densities_PV.nrrd",
+    "sst": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/densities_SST.nrrd",
+    "rest": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/densities_REST.nrrd",
+    "vip": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/inputs/marker_stain_densities/densities_VIP.nrrd"
+  },
+  "tests": [
+    {
+      "left": ["gad"],
+      "right": ["pv", "sst", "rest", "vip"],
+      "mask": "Isocortex",
+      "tolerance": {"relative": 1E-6},
+      "comment": "GAD is all gaba-ergic neurons which are by definition pv, sst, vip and rest"
+    },
+    {
+      "modality": "count",
+      "left": [0],
+      "right": ["exc"],
+      "mask": ["and",["Isocortex", "Layer1"]],
+      "tolerance": {"absolute": 1E-2},
+      "comment": "Nothing excitatory in L1!"
+    },
+    {
+      "left": ["neurons"],
+      "right": ["exc", "gad"],
+      "mask": "Isocortex",
+      "tolerance": {"relative": 1E-6},
+      "comment": "Neurons are either excitatory or GABA-ergic"
+    }
+  ]
+}
+
+

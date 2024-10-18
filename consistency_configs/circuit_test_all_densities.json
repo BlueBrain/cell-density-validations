@@ -1,0 +1,2280 @@
+{
+  "annotations": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/brain_regions.nrrd",
+  "hierarchy": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/hierarchy.json",
+  "circuits": {
+    "proj_82": "/gpfs/bbp.cscs.ch/project/proj82/scratch/circuits/M7/CircuitConfig"
+  },
+  "nrrd": {
+    "L2_TPC:B": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L2_TPC:B.nrrd",
+    "L5_BTC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_BTC.nrrd",
+    "L4_BP": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_BP.nrrd",
+    "L4_MC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_MC.nrrd",
+    "L4_TPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_TPC.nrrd",
+    "L23_BTC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_BTC.nrrd",
+    "L4_BTC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_BTC.nrrd",
+    "L5_SBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_SBC.nrrd",
+    "L5_BP": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_BP.nrrd",
+    "L6_TPC:C": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_TPC:C.nrrd",
+    "L5_UPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_UPC.nrrd",
+    "L6_BPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_BPC.nrrd",
+    "L3_TPC:C": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L3_TPC:C.nrrd",
+    "L6_TPC:A": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_TPC:A.nrrd",
+    "L23_CHC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_CHC.nrrd",
+    "L2_TPC:A": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L2_TPC:A.nrrd",
+    "L5_LBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_LBC.nrrd",
+    "L23_NBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_NBC.nrrd",
+    "L5_CHC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_CHC.nrrd",
+    "L1_DAC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L1_DAC.nrrd",
+    "L23_DBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_DBC.nrrd",
+    "L4_UPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_UPC.nrrd",
+    "L6_UPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_UPC.nrrd",
+    "L3_TPC:A": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L3_TPC:A.nrrd",
+    "L5_DBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_DBC.nrrd",
+    "L6_IPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_IPC.nrrd",
+    "L5_NGC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_NGC.nrrd",
+    "L6_LBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_LBC.nrrd",
+    "L4_LBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_LBC.nrrd",
+    "L6_HPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_HPC.nrrd",
+    "L5_TPC:B": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_TPC:B.nrrd",
+    "L5_NBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_NBC.nrrd",
+    "L1_LAC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L1_LAC.nrrd",
+    "L6_MC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_MC.nrrd",
+    "L4_DBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_DBC.nrrd",
+    "L1_SAC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L1_SAC.nrrd",
+    "L4_SBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_SBC.nrrd",
+    "L6_NGC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_NGC.nrrd",
+    "L5_TPC:C": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_TPC:C.nrrd",
+    "L23_LBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_LBC.nrrd",
+    "L4_NBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_NBC.nrrd",
+    "L6_NBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_NBC.nrrd",
+    "L23_MC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_MC.nrrd",
+    "L5_MC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_MC.nrrd",
+    "L4_CHC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_CHC.nrrd",
+    "L23_BP": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_BP.nrrd",
+    "L6_SBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_SBC.nrrd",
+    "L6_BTC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_BTC.nrrd",
+    "L4_SSC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L4_SSC.nrrd",
+    "L5_TPC:A": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L5_TPC:A.nrrd",
+    "L23_SBC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_SBC.nrrd",
+    "L1_HAC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L1_HAC.nrrd",
+    "L23_NGC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L23_NGC.nrrd",
+    "L6_CHC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L6_CHC.nrrd",
+    "L2_IPC": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L2_IPC.nrrd",
+    "neurons": [
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]EXC.nrrd",
+      "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]INH.nrrd"
+    ],
+    "L1_NGC-SA": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L1_NGC-SA.nrrd",
+    "L1_NGC-DA": "/gpfs/bbp.cscs.ch/project/proj82/entities/atlas/ThalNCX/20210531/[cell_density]L1_NGC-DA.nrrd"
+  },
+  "tests": [
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "ACAd",
+      "comment": "Testing individual regions: ACAd",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "ACAv",
+      "comment": "Testing individual regions: ACAv",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "AId",
+      "comment": "Testing individual regions: AId",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "AIp",
+      "comment": "Testing individual regions: AIp",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "AIv",
+      "comment": "Testing individual regions: AIv",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "AUDp",
+      "comment": "Testing individual regions: AUDp",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "AUDpo",
+      "comment": "Testing individual regions: AUDpo",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "AUDv",
+      "comment": "Testing individual regions: AUDv",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "ECT",
+      "comment": "Testing individual regions: ECT",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "FRP",
+      "comment": "Testing individual regions: FRP",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "GU",
+      "comment": "Testing individual regions: GU",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "ILA",
+      "comment": "Testing individual regions: ILA",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "MOp",
+      "comment": "Testing individual regions: MOp",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "MOs",
+      "comment": "Testing individual regions: MOs",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "ORBl",
+      "comment": "Testing individual regions: ORBl",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "ORBm",
+      "comment": "Testing individual regions: ORBm",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "ORBvl",
+      "comment": "Testing individual regions: ORBvl",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "PERI",
+      "comment": "Testing individual regions: PERI",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "PL",
+      "comment": "Testing individual regions: PL",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "RSPd",
+      "comment": "Testing individual regions: RSPd",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "RSPv",
+      "comment": "Testing individual regions: RSPv",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "SSp-ll",
+      "comment": "Testing individual regions: SSp-ll",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "SSp-m",
+      "comment": "Testing individual regions: SSp-m",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "SSp-n",
+      "comment": "Testing individual regions: SSp-n",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "SSp-tr",
+      "comment": "Testing individual regions: SSp-tr",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "SSp-ul",
+      "comment": "Testing individual regions: SSp-ul",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "SSp-un",
+      "comment": "Testing individual regions: SSp-un",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "SSs",
+      "comment": "Testing individual regions: SSs",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "TEa",
+      "comment": "Testing individual regions: TEa",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISC",
+      "comment": "Testing individual regions: VISC",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISa",
+      "comment": "Testing individual regions: VISa",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISal",
+      "comment": "Testing individual regions: VISal",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISam",
+      "comment": "Testing individual regions: VISam",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISl",
+      "comment": "Testing individual regions: VISl",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISli",
+      "comment": "Testing individual regions: VISli",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISp",
+      "comment": "Testing individual regions: VISp",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISpl",
+      "comment": "Testing individual regions: VISpl",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISpm",
+      "comment": "Testing individual regions: VISpm",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISpor",
+      "comment": "Testing individual regions: VISpor",
+      "modality": "count"
+    },
+    {
+      "left": [
+        "neurons"
+      ],
+      "right": [
+        {
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "relative": 0.01
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "mask": "VISrl",
+      "comment": "Testing individual regions: VISrl",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L2_TPC:B"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L2_TPC:B"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L2_TPC:B neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_BTC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_BTC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_BTC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_BP"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_BP"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_BP neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_MC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_MC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_MC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_TPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_TPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_TPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_BTC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_BTC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_BTC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_BTC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_BTC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_BTC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_SBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_SBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_SBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_BP"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_BP"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_BP neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_TPC:C"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_TPC:C"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_TPC:C neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_UPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_UPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_UPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_BPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_BPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_BPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L3_TPC:C"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L3_TPC:C"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L3_TPC:C neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_TPC:A"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_TPC:A"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_TPC:A neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_CHC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_CHC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_CHC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L2_TPC:A"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L2_TPC:A"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L2_TPC:A neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_LBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_LBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_LBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_NBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_NBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_NBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_CHC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_CHC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_CHC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L1_DAC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L1_DAC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L1_DAC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_DBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_DBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_DBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_UPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_UPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_UPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_UPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_UPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_UPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L3_TPC:A"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L3_TPC:A"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L3_TPC:A neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_DBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_DBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_DBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_IPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_IPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_IPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_NGC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_NGC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_NGC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_LBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_LBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_LBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_LBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_LBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_LBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_HPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_HPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_HPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_TPC:B"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_TPC:B"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_TPC:B neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_NBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_NBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_NBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L1_LAC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L1_LAC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L1_LAC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_MC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_MC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_MC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_DBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_DBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_DBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L1_SAC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L1_SAC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L1_SAC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_SBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_SBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_SBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_NGC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_NGC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_NGC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_TPC:C"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_TPC:C"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_TPC:C neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_LBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_LBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_LBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_NBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_NBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_NBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_NBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_NBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_NBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_MC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_MC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_MC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_MC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_MC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_MC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_CHC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_CHC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_CHC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_BP"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_BP"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_BP neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_SBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_SBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_SBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_BTC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_BTC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_BTC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L4_SSC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L4_SSC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L4_SSC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L5_TPC:A"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L5_TPC:A"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L5_TPC:A neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_SBC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_SBC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_SBC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L1_HAC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L1_HAC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L1_HAC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L23_NGC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L23_NGC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L23_NGC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L6_CHC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L6_CHC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L6_CHC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L2_IPC"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L2_IPC"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L2_IPC neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L1_NGC-SA"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L1_NGC-SA"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L1_NGC-SA neurons should add up.",
+      "modality": "count"
+    },
+    {
+      "mask": "Isocortex",
+      "left": [
+        "L1_NGC-DA"
+      ],
+      "right": [
+        {
+          "filters": {
+            "mtype": "L1_NGC-DA"
+          },
+          "circuit": "proj_82"
+        }
+      ],
+      "tolerance": {
+        "sum_of_voxels": {
+          "absolute": 2.0
+        },
+        "idv_voxels": {
+          "log-p-value": 0.5
+        }
+      },
+      "comment": "Placed L1_NGC-DA neurons should add up.",
+      "modality": "count"
+    }
+  ]
+}
