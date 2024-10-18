@@ -1,0 +1,5 @@
+numpy >= 1.20.0
+pandas >= 1.2.4
+voxcell >= 3.1.5
+scipy >= 1.8.0
+atlas_splitter>=0.1.4
