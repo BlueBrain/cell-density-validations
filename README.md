@@ -1,3 +1,7 @@
+> [!WARNING]
+> The Blue Brain Project concluded in December 2024, so development has ceased under the BlueBrain GitHub organization.
+> Future development will take place at: https://github.com/openbraininstitute/cell-density-validations
+
 # Purpose
 This repository provides a set of scripts for the validation of volumetric cell densities in .nrrd format.
 Specifically, this refers to validations of their internal consistency, NOT their scientific validity. This entails checks that e.g. the sum of densities of inhibitory sub-types sum up to the density of inhibitory neurons in general.
